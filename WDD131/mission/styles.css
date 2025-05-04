@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 20px;
+  }
+  
+  /* Header (Title and Subtitle) */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    letter-spacing: 3px; /* Adds space between letters */
+    text-transform: uppercase; /* Makes title all uppercase */
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    color: #006EB6; /* Subtitle color */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;/* Makes title all uppercase */
+    font-size: 20px;
+    border-bottom: .20px solid #6b6d6d; /* Adds a blue line under the h2 */
+    padding-bottom: 10px; /* Adds some space between the text and the line */
+    padding-left: 55px; /* Adds space on the left */
+    padding-right: 55px; /* Adds space on the right */
+    display: inline-block; /* Makes the h2 inline-block to limit the line to content width */
+  }
+
+  .content {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #5d5b5b;      /* Thin gray border */
+    padding: 20px;               /* Space inside the box */
+    background-color: #fffffe;   /* Optional: light background for contrast */
+  }
+  
+  
+  /* Main Content */
+  main {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  p {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  ol {
+    padding-left: 20px;
+  }
+  
+  ol li {
+    text-align: left;
+    margin-bottom: 10px;
+
+  }
+  
+  /* Footer (Image) */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  footer img {
+    max-width: 100%;
+    width: 150px; /* Resize image */
+    height: auto;
+  }
