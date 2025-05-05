@@ -13,7 +13,7 @@
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css">
     <!-- Link to JavaScript file (with defer to wait for DOM to load) -->
-    <script src="script.js" defer></script>
+    <script src="mission.js" defer></script>
 </head>
 
 <body>
@@ -21,6 +21,12 @@
     <header>
         <h1>Mission Statement</h1>
         <h2>Brigham Young University–Idaho</h2>
+
+        <label for="themeSelect">Choose Theme:</label>
+        <select id="themeSelect">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
     </header>
 
      <!-- Main content with mission statement and goals -->
@@ -52,7 +58,7 @@
     </main>
 
     <footer>
-    <img src="byui-logo_blue.webp" alt="BYU–Idaho Campus logo" width="600" class="footer-logo">
+    <img id="logo" src="byui-logo_blue.webp" alt="BYU–Idaho Campus logo" width="600" class="footer-logo">
     </footer>
     </div>
 </body>

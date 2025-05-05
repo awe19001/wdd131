@@ -3,15 +3,29 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
-  body {
+
+/* Default (light theme) */
+body {
     font-family: "Times New Roman", serif;
     font-size: 20px;
     line-height: 1.5;
     padding: 20px;
+    background-color: white;
+    color: black;
   }
+
+/* Dark theme */
+body.dark {
+    background-color: #333; /* dark gray background */
+    color: white;           /* white text */
+  }
+
+body.dark h2 {
+    color: #48A9E6; /* Lighter blue for better contrast */
+  }
+
   
-  /* Header (Title and Subtitle) */
+/* Header (Title and Subtitle) */
   header {
     text-align: center;
     margin-bottom: 30px;
@@ -23,8 +37,9 @@
     margin-bottom: 10px;
   }
   
+  /* Default subtitle color (light mode) */
   h2 {
-    color: #006EB6; /* Subtitle color */
+    color: #006EB6; /* BYUI Subtitle color */
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;/* Makes title all uppercase */
