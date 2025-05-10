@@ -29,7 +29,6 @@ nav a {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
 }
 
 .nav-links a {
@@ -37,19 +36,18 @@ nav a {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  /* This centers the images horizontally */
-  gap: 1rem;                /* Adds space between images */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  gap: 1rem;
+  justify-items: center; /* Center the images inside the grid cells */
   margin-top: 1rem;
-  max-width: 1000px;
-  margin: 1rem auto; /* Center the whole gallery block */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the whole gallery block */
 }
 
-
 .gallery img {
-  width: 250px;
-  height: 250px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border: 10px solid rgb(176, 171, 171); /* White border */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional soft shadow for contrast */
@@ -72,10 +70,22 @@ body {
   font-size: 1.2em;
   text-align: center;
   background-color: #f4f4f4;
+  justify-content: center;
+}
+
+main {
+  flex: 1; /* Allow main content to take up available space */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center gallery horizontally */
+  justify-content: center; /* Center gallery vertically */
+  padding: 2rem 0; /* Add some space around the content */
 }
 
 main h2 {
   color: black;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 footer {
@@ -85,6 +95,10 @@ footer {
   color: #fcfafa;  /* Optional: Set text color for contrast */
   width: 100%;               /* Make the header span the full width of the page */
   margin-top: auto;           /* Push the footer to the bottom */
+}
+
+footer p {
+  padding-left: 3rem;  
 }
 
 
@@ -130,28 +144,6 @@ header {
   cursor: pointer;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#overlay img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.hidden {
-  display: none;
 }
 }
 
@@ -243,9 +235,11 @@ header {
   .navbar {
     flex-direction: row;    /* Switch to horizontal layout */
     justify-content: center;
+    gap: 5.5rem;
   }
+
   .navbar a {
-    margin: 0 1rem;
+    margin: 0 2rem;
   }
 
   main h2 {
