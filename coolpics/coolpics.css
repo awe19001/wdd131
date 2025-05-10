@@ -5,6 +5,12 @@
  }
 
 /* Basic styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
   background-color: #bdabee;
   padding: 10px;
@@ -40,6 +46,7 @@ nav a {
   margin: 1rem auto; /* Center the whole gallery block */
 }
 
+
 .gallery img {
   width: 250px;
   height: 250px;
@@ -63,6 +70,8 @@ body {
   min-height: 100vh;          /* Make sure the body takes at least the full height of the viewport */
   font-family: var(--primary-font);
   font-size: 1.2em;
+  text-align: center;
+  background-color: #f4f4f4;
 }
 
 main h2 {
@@ -71,12 +80,11 @@ main h2 {
 
 footer {
   background-color: #bdabee; /* Add the background color */
-  padding: .5px;  /* Optional: Add some padding for spacing */
+  padding: 1%;  /* Optional: Add some padding for spacing */
   text-align: left;           /* Align text to the left */
   color: #fcfafa;  /* Optional: Set text color for contrast */
   width: 100%;               /* Make the header span the full width of the page */
   margin-top: auto;           /* Push the footer to the bottom */
-
 }
 
 
@@ -102,18 +110,6 @@ footer {
     display: flex;
   }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  text-align: center;
-  background-color: #f4f4f4;
-}
 
 header {
   margin-bottom: 20px;
@@ -136,6 +132,7 @@ header {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+
 #overlay {
   position: fixed;
   top: 0;
@@ -155,12 +152,6 @@ header {
 
 .hidden {
   display: none;
-}
-
-footer {
-  background-color: #bdabee; /* Add the background color */
-  padding: 1px;  /* Optional: Add some padding for spacing */
-  text-align: left;  
 }
 }
 
@@ -203,6 +194,28 @@ footer {
     text-align: center;
   }
 
+   .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns only */
+    gap: 1rem;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 1rem auto;
+  }
+
+  .gallery img {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  
+  /* Center the last image if it's alone in a row */
+  .gallery figure:last-child:nth-child(odd) {
+    grid-column: 1 / -1; /* Span across both columns */
+    justify-self: center; /* Center it within the row */
+  }
 }
 
 /* Responsive - large screens */
