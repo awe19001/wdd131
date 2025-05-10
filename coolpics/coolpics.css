@@ -1,0 +1,251 @@
+ @import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+ :root {
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: Mooli, san-serif;
+ }
+
+/* Basic styling */
+.navbar {
+  background-color: #bdabee;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack vertically (good for small/medium screens) */
+  align-items: center;     /* Center items horizontally */
+  text-align: center;      /* Center text inside the links */
+  gap: 0.5rem;              /* Space between links */
+}
+
+nav a {
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* This centers the images horizontally */
+  gap: 1rem;                /* Adds space between images */
+  margin-top: 1rem;
+  max-width: 1000px;
+  margin: 1rem auto; /* Center the whole gallery block */
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 10px solid rgb(176, 171, 171); /* White border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional soft shadow for contrast */
+  border-radius: 1px; /* Optional: rounded corners */
+}
+
+header {
+  background-color: #bdabee; /* Add the background color */
+}
+
+header h1 {
+  color: white;
+}
+
+body {
+  display: flex;              /* Enable flexbox layout on the body */
+  flex-direction: column;     /* Arrange the elements (header, main, footer) vertically */
+  min-height: 100vh;          /* Make sure the body takes at least the full height of the viewport */
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+}
+
+main h2 {
+  color: black;
+}
+
+footer {
+  background-color: #bdabee; /* Add the background color */
+  padding: .5px;  /* Optional: Add some padding for spacing */
+  text-align: left;           /* Align text to the left */
+  color: #fcfafa;  /* Optional: Set text color for contrast */
+  width: 100%;               /* Make the header span the full width of the page */
+  margin-top: auto;           /* Push the footer to the bottom */
+
+}
+
+
+
+/* Responsive - small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;     /* Stack images vertically */
+  align-items: center;        /* Center images horizontally */
+  gap: 1rem;                  /* Optional spacing between images */
+}
+
+.gallery img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  background-color: #bdabee; /* Add the background color */
+  padding: 1px;  /* Optional: Add some padding for spacing */
+  text-align: left;  
+}
+}
+
+/* Responsive - medium screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-toggle {
+    display: block; /* Show the "Menu" button */
+    color: white; 
+    font-size: 2rem; /* Make it larger */
+  }
+
+  .nav-links {
+    display: none; /* Hide the links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .navbar a {
+    display: none;
+  }
+
+  .navbar.open a {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  header {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  main h2 {
+    text-align: center;
+  }
+
+}
+
+/* Responsive - large screens */
+@media (min-width: 1024px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 1rem;
+    justify-items: center; /* center images in their grid cells */
+  }
+
+  .gallery img {
+    max-width: 100%; /* Ensure images do not exceed their container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Optionally, crop the image to fit */
+  }
+  
+  header {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* Make Links Inline on Large Screens */
+  .navbar {
+    flex-direction: row;    /* Switch to horizontal layout */
+    justify-content: center;
+  }
+  .navbar a {
+    margin: 0 1rem;
+  }
+
+  main h2 {
+    text-align: center;
+  }
+
+/* Hide toggle on large screens */
+.menu-toggle {
+  display: none; /* hidden by default */
+  color: var(--text-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+}
+

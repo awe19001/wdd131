@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Pics Gallery</title>
+  <meta name="description" content="A responsive photography gallery images.">
+  <meta name="author" content="Joeverlyn Awe">
+  <link rel="stylesheet" href="coolpics.css">
+  <script src="coolpics.js" defer></script>
+</head>
+
+<body>
+
+<!-- Header with title and nav -->
+  <header>
+    <h1>Cool Pics 📷</h1>
+<!-- Responsive Navigation -->
+      <nav class="navbar">
+       <span class="menu-toggle" onclick="toggleMenu()">Menu</span>
+     
+        <a href="coolpics/index.html">Home</a>
+        <a href="#people">People</a>
+        <a href="#places">Places</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>    
+       
+      </nav>
+  </header>
+
+<!-- Main content -->
+  <main>
+  <h2>Current Work</h2>
+    <section class="gallery">
+      <!-- 9 placeholder figures (same image repeated for now) -->
+     <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="byui-logo_blue.webp" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+    <figure>
+      <picture>
+        <source srcset="norris-full.jpeg" media="(min-width: 1024px)">
+        <img src="norris-sm.jpeg" alt="picture">
+      </picture>
+    </figure>
+  </section>
+</main>
+
+  
+
+ <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Not a real site 😀</p>
+  </footer>
+
+    <!-- JavaScript goes here -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
