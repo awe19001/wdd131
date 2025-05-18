@@ -101,48 +101,43 @@ main h2 {
 }
 
 /* Modal styling */
+dialog#image-viewer:not([open]) {
+  display: none;
+}
+
 dialog#image-viewer {
   width: 80%;
   height: 80%;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.9);
   border: none;
   padding: 0;
   position: fixed;
   top: 10%;
   left: 10%;
-  z-index: 100; /* Ensure it's on top of everything */
-  display: none; /* Initially hidden */
+  z-index: 1000;
+  display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
-#image-viewer::backdrop {
-  background: transparent;
-}
-
-/* Modal image */
 #viewer-img {
-  width: 100%;
-  max-height: 80%;
-  object-fit: contain;  /* Ensure image is properly contained inside modal */
-  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
 }
 
-/* Close button */
 .close-viewer {
   position: absolute;
-  top: 5%;  /* Slightly lower to be more visible */
-  right: 5%; /* Position it at the top right */
-  background-color: white;
+  top: 20px;
+  right: 20px;
+  background: white;
   border: none;
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 101; /* Ensure button is above the image */
-  border-radius: 50%; /* Circular button */
-  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  z-index: 1001;
 }
+
 
 footer {
   background-color: #bdabee; /* Add the background color */
