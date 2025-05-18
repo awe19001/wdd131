@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ========== NAV MENU ==========
+  // ===== MENU FUNCTIONALITY =====
   const menuButton = document.querySelector(".menu-toggle");
   const navbar = document.querySelector(".navbar");
   const links = navbar.querySelectorAll("a");
@@ -22,14 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuButton.addEventListener("click", toggleMenu);
   window.addEventListener("resize", handleResize);
-  handleResize(); // run initially
+  handleResize();
 
-  // ========== IMAGE MODAL ==========
+  // ===== MODAL IMAGE VIEWER =====
   const gallery = document.querySelector(".gallery");
   const modal = document.querySelector("#image-viewer");
-  const modalImage = document.querySelector("#viewer-img");
-  const closeButton = document.querySelector(".close-viewer");
 
+  // Viewer template function (required by rubric)
+  function viewerTemplate(imgSrc, altText) {
+    return `
+      <img id="viewer-img" src="${imgSrc}" alt="${altText}">
+      <button class="close-viewer">X</button>
+    `;
+  }
+
+  // Open modal on image click
   gallery.addEventListener("click", (event) => {
     const img = event.target.closest("img");
     if (!img) return;
@@ -37,21 +44,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const smallSrc = img.getAttribute("src");
     const fullSrc = smallSrc.replace("norris-sm.jpeg", "norris-full.jpeg");
 
-    modalImage.src = fullSrc;
-    modalImage.alt = img.alt;
-    modal.showModal();// Opens dialog properly
-  });
+    modal.innerHTML = viewerTemplate(fullSrc, img.alt);
 
+    // Show modal
+    modal.showModal();
+    document.body.style.overflow = "hidden"; // Prevent scroll
+
+    // Close button functionality
+    const closeButton = modal.querySelector(".close-viewer");
     closeButton.addEventListener("click", () => {
-    console.log("X button clicked");
-    if (modal.open) {
       modal.close();
-    }
+    });
   });
 
+  // Close modal on background click
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.close();
     }
+  });
+
+  // Close modal on Escape key
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.open) {
+      modal.close();
+    }
+  });
+
+  // Restore scroll after modal is closed
+  modal.addEventListener("close", () => {
+    document.body.style.overflow = "";
   });
 });
