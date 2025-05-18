@@ -1,54 +1,57 @@
-// Menu toggle button
-function toggleMenu() {
-  const nav = document.querySelector(".navbar");
-  nav.classList.toggle("open");  // Toggle the "open" class
-  const links = nav.querySelectorAll("a");
-  
-  // Toggle the visibility of the links
-  links.forEach(link => {
-    if (nav.classList.contains("open")) {
-      link.style.display = "block";
-    } else {
-      link.style.display = "none";
-    }
-  });
-}
-
-// Resize handler to show/hide menu links
-function handleResize() {
+document.addEventListener("DOMContentLoaded", () => {
+  // ========== NAV MENU ==========
+  const menuButton = document.querySelector(".menu-toggle");
   const navbar = document.querySelector(".navbar");
   const links = navbar.querySelectorAll("a");
 
-  if (window.innerWidth > 1000) {
-    links.forEach(link => link.style.display = "inline-block");
-    navbar.classList.remove("open"); // reset state
-  } else {
-    if (!navbar.classList.contains("open")) {
+  function toggleMenu() {
+    navbar.classList.toggle("open");
+    links.forEach(link => {
+      link.style.display = navbar.classList.contains("open") ? "block" : "none";
+    });
+  }
+
+  function handleResize() {
+    if (window.innerWidth > 1000) {
+      links.forEach(link => link.style.display = "inline-block");
+      navbar.classList.remove("open");
+    } else if (!navbar.classList.contains("open")) {
       links.forEach(link => link.style.display = "none");
     }
   }
-}
-
-// Set up event listeners
-document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.querySelector(".menu-toggle");
 
   menuButton.addEventListener("click", toggleMenu);
   window.addEventListener("resize", handleResize);
-  handleResize(); // Run once to adjust visibility on initial load
+  handleResize(); // run initially
+
+  // ========== IMAGE MODAL ==========
+  const gallery = document.querySelector(".gallery");
+  const modal = document.querySelector("#image-viewer");
+  const modalImage = document.querySelector("#viewer-img");
+  const closeButton = document.querySelector(".close-viewer");
+
+  gallery.addEventListener("click", (event) => {
+    const img = event.target.closest("img");
+    if (!img) return;
+
+    const smallSrc = img.getAttribute("src");
+    const fullSrc = smallSrc.replace("norris-sm.jpeg", "norris-full.jpeg");
+
+    modalImage.src = fullSrc;
+    modalImage.alt = img.alt;
+    modal.showModal();// Opens dialog properly
+  });
+
+    closeButton.addEventListener("click", () => {
+    console.log("X button clicked");
+    if (modal.open) {
+      modal.close();
+    }
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
 });
-
-
-
-//function toggleMenu() {
-//  document.getElementById("navMenu").classList.toggle("active");
-//    }
-
-//document.addEventListener("DOMContentLoaded", function () {
-//  const menuButton = document.querySelector(".menu-toggle");
-//  const navbar = document.querySelector(".navbar");
-
-// menuButton.addEventListener("click", function () {
-//   navbar.classList.toggle("open");
-// });
-// });

@@ -18,6 +18,11 @@
   gap: 0.5rem;              /* Space between links */
 }
 
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
 nav a {
   color: white;
 }
@@ -29,6 +34,17 @@ nav a {
 
 .nav-links a {
   text-decoration: none;
+}
+
+/* Menu toggle button style */
+.menu-toggle {
+  display: none;
+  color: white;
+  cursor: pointer;
+  background-color: #6c63ff;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 .gallery {
@@ -84,6 +100,50 @@ main h2 {
   text-align: center;
 }
 
+/* Modal styling */
+dialog#image-viewer {
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  border: none;
+  padding: 0;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  z-index: 100; /* Ensure it's on top of everything */
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#image-viewer::backdrop {
+  background: transparent;
+}
+
+/* Modal image */
+#viewer-img {
+  width: 100%;
+  max-height: 80%;
+  object-fit: contain;  /* Ensure image is properly contained inside modal */
+  margin: auto;
+}
+
+/* Close button */
+.close-viewer {
+  position: absolute;
+  top: 5%;  /* Slightly lower to be more visible */
+  right: 5%; /* Position it at the top right */
+  background-color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 101; /* Ensure button is above the image */
+  border-radius: 50%; /* Circular button */
+  font-weight: bold;
+}
+
 footer {
   background-color: #bdabee; /* Add the background color */
   padding: 1%;  /* Optional: Add some padding for spacing */
@@ -101,6 +161,24 @@ footer p {
 
 /* Responsive - small screens */
 @media (max-width: 768px) {
+  .navbar a {
+    display: none;
+  }
+
+  .navbar.open a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  .menu-toggle {
+    display: block;
+    color: white;
+    cursor: pointer;
+    background-color: #6c63ff;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -111,36 +189,30 @@ footer p {
     width: 100%;
   }
 
-  .menu-toggle {
-    display: block;
-    color: white;
-  }
-
   .nav-links.active {
     display: flex;
   }
 
+  header {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 1rem;
+  }
 
-header {
-  margin-bottom: 20px;
-  text-align: center;
-  padding: 1rem;
-}
+  .gallery {
+    display: flex;
+    flex-direction: column;     /* Stack images vertically */
+    align-items: center;        /* Center images horizontally */
+    gap: 1rem;                  /* Optional spacing between images */
+  }
 
-.gallery {
-  display: flex;
-  flex-direction: column;     /* Stack images vertically */
-  align-items: center;        /* Center images horizontally */
-  gap: 1rem;                  /* Optional spacing between images */
-}
-
-.gallery img {
-  max-width: 100%;
-  height: auto;
-  cursor: pointer;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
 }
 
 /* Responsive - medium screens */
@@ -207,7 +279,22 @@ header {
 }
 
 /* Responsive - large screens */
-@media (min-width: 1024px) {
+@media (min-width: 1001px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .navbar a {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
