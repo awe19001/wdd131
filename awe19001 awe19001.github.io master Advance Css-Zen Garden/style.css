@@ -1,0 +1,559 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+/* basic elements */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=VT323&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@500&display=swap);
+@import url(https://allfont.net/allfont.css?fonts=pacfont);
+ 
+@keyframes blink {
+	50% {
+		opacity: 0
+	}
+	80% {
+		opacity: .5;
+	}
+}
+@keyframes moveforward {
+	0% {
+		left:-10%;
+	}
+	100% {
+		left: 125%;
+	}
+}
+@keyframes movefast {
+	0% {
+		left:-30%;
+	}
+	100% {
+		left: 125%;
+	}
+}
+@keyframes anim-sidebar {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+@keyframes glow {
+	from {
+	  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+	}
+	to {
+	  text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+	}
+  }
+  @keyframes animate 
+  {
+	  from{
+		  background-position: 100% 0;
+	  }
+	  to {
+		  background-position: 0% 0;
+	  }
+  }
+
+  /*Amber MOBILE*/
+  @media only screen and (max-width: 600px) {
+	  body{
+		 line-height: 1;
+	  }
+	  .page-wrapper {
+		  width: 450px;
+	  }
+	  header h1 {
+		  font-size: 1.5rem;
+		  }
+	  header h2 {
+		  letter-spacing: .4rem;
+		  font-size: 1rem;
+	  }
+	  .summary {
+		  line-height: 1;
+		  font-weight: 100;
+		  width: 300px;
+	  }
+	  .summary p:last-child:after {
+		  display: none;
+	  }
+	  .preamble{ 
+		  margin-left: 2%; 
+		  margin-top: 10%;
+		  width: 350px;
+	  }
+	  h3{
+		  color: yellow;
+	  }
+	  p {
+		  font-size: 10px;
+	  }
+	  .explanation {
+		  margin-left: 11%; 
+		  margin-top: 11%;
+		  width: 350px;
+	  }
+	  .participation {
+		  margin-left: 11%; 
+		  margin-top: 11%;
+		  width: 350px;
+	  }
+	  .benefits{ 	 
+		  margin-left: 11%; 
+		  margin-top: 11%;
+		  width: 350px;
+	  }
+	  .requirements {
+		  margin-left:11%; 
+		  margin-top: 11%;
+		  width: 350px;
+	  }
+	  footer {
+		  width: 500px;
+	  }
+	  .wrapper {
+		  margin-top: 100%;
+	  }
+  
+	  }
+  /* end Amber MOBILE*/
+
+
+
+
+html {
+	margin: 0;
+	padding: 0;
+	}
+body { 
+	font: 75% Helvetica, sans-serif; 
+	line-height: 1.88889;
+	color: white; 
+	background: black; 
+	margin: 0 auto; 
+	padding: 0;
+	}
+p { 
+	margin-top: 0; 
+	text-align: justify;
+	}
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: rgb(153, 22, 153);
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #D4CDDC;
+	}
+a:hover, a:focus, a:active { 
+	text-decoration: underline; 
+	color: rgb(230, 39, 172);
+	}
+abbr {
+	border-bottom: none;
+	}
+
+/* specific divs */
+
+.page-wrapper {
+	margin: 0 auto;
+	width: 800px;
+	height: 4000px;
+	position: relative;
+	z-index: 1;
+	margin-bottom: 50px;
+	background: black;
+}
+.intro {
+	margin-left:10%; 
+	margin-top: 5%;
+}
+
+header h1 {
+	color: yellow;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: 300;
+	line-height: 0.001;
+	font-family: 'PacFont', arial;
+	text-shadow: 4px 4px 4px #aaa;
+	font-weight: bold;
+	animation: blink 1s linear infinite;
+}
+header h2 {
+	color: white;
+	line-height: 0.4;
+	letter-spacing: .2rem;
+	font-family: 'VT323', monospace;
+	font-size: 2rem;
+}
+.summary {
+	color: white;
+	line-height: 1;
+	margin: 1rem 0 .4rem 0;
+	font-size: larger;
+	width: 600px;
+	letter-spacing: .1rem;
+	padding: 1.6rem .8rem .4rem 2.4rem;
+	font-family: 'Montserrat', sans-serif;
+}
+.summary p:last-child{
+	color: blueviolet;
+}
+
+.summary p:last-child:after {
+    content: ' ';
+    height: 1800px;
+    width: 850px;
+    position: absolute;
+    top: 210px;
+    margin-left: -145px;
+    display: block;
+	background: url('Mao_na_jud_ni_upper1_50.png') no-repeat 50% top;
+		
+}
+.preamble{ 
+    color: white; 
+	margin-left:43%; 
+	margin-top: 35%;
+	padding:0% 1% 0% 1%;  
+	width: 250px;
+	position: absolute;
+}
+
+.preamble h3 {
+	font-size: 15px;
+}
+h3 {
+	text-transform: uppercase;
+	font-family: 'Roboto Mono', monospace;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+p {
+	font-family: 'Roboto Mono', monospace;
+	line-height: 20px;
+	font-size: 15px;
+}
+.benefits{ 
+    color: white; 
+	margin-left: 14%; 
+	margin-top: 33.5%;
+	padding:0% 0% 0% 1%; 
+	width: 205px;
+	position: absolute;
+}
+.benefits h3 {
+	font-size: 16px;
+	margin-top: 18%;
+}
+.explanation {
+	color: white; 
+	margin-top: 115%;
+	padding:0% 1% 0% 1%; 
+	position: absolute;
+	width: 545px;
+	margin-left:15%; 
+	font-size: 22px;
+}
+.explanation:before {
+	content: ' ';
+    height: 30px;
+    width: 30px;
+	position: absolute;
+    margin-left: -80px;
+	margin-top: 13%;
+	background: url('circle_30x30.jpg') no-repeat 50% top;
+	animation: blink 1s linear infinite;
+}
+.explanation:after {
+    content: ' ';
+    height: 1800px;
+    width: 850px;
+    position: absolute;
+    top: 240px;
+    margin-left: -154px;
+	margin-top: 31%;
+	background: url('mao_na_jud_ni_center_1_50.png') no-repeat 50% top;
+}
+
+.participation {
+	color: white; 
+	margin-left:15%; 
+	margin-top: 173%;
+	padding:0% 1% 0% 1%; 
+	width: 540px;
+	position: absolute;
+	font-size: 15px;
+	font-size: 22px;
+}
+.participation:before {
+	content: ' ';
+    height: 30px;
+    width: 30px;
+	position: absolute;
+    margin-left: 595px;
+	margin-top: -90%;
+	background: url('circle_30x30.jpg') no-repeat 50% top;
+	animation: blink 1s linear infinite;
+}
+
+.participation:after {
+	content: ' ';
+    height: 40px;
+    width: 40px;
+	position: absolute;
+    margin-left: 595px;
+	margin-top: -92%;
+	background: url('circle_30x30.jpg') no-repeat 50% top;
+	animation: blink 1s linear infinite;
+}
+.requirements {
+	color: white; 
+	margin-left:15%; 
+	margin-top: 245%;
+	padding:0% 1% 0% 1%; 
+    width: 540px;
+	position: absolute;
+	font-size: 22px;
+}
+
+.requirements:before {
+	content: ' ';
+    height: 40px;
+    width: 40px;
+	position: absolute;
+    margin-left: -60px;
+	margin-top: -13%;
+	background: url('pacman-trans_40x40.png') no-repeat 50% top;
+	animation: movefast 5.5s linear infinite;
+}
+
+.requirements:after {
+	content: ' ';
+    height: 80px;
+    width: 80px;
+	position: absolute;
+    margin-left: -80px;
+	margin-top: -152%;
+	background: url('scared_ghost_50.png') no-repeat 50% top;
+	animation: moveforward 5s linear infinite;
+}
+footer {
+	width: 800px;
+	font-size: 14px;
+	margin-left:15%; 
+	margin-top: -3%; 
+
+}
+.sidebar {
+	font-size: 15px;
+}
+
+.wrapper:before {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -1px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #fff000, #ff0000, #fb0094,#0000ff, #00ff00);
+	background-size: 400%;
+	width: calc(100% + 5px);
+	height: calc(100% + 5px);
+	z-index: -2;
+	animation: anim-sidebar 20s linear infinite;
+}
+.wrapper {
+	margin-top: 2900px;
+	margin-left: 30px;
+	width: 740px;
+	height: 718px;
+	justify-content: center;
+	display: flex;
+	content: ' ';
+    position: absolute;
+ 	background: url('final_na_jud_lower3_50.png') no-repeat 50% top;
+}
+.wrapper:after {
+	filter: blur(50px);
+}
+.design-selection {
+	position: absolute;
+	top: 50%;
+	margin-left: -180px;
+	margin-top: -345px;
+	padding:0% 1% 0% 1%;  
+	width: 230px;
+	font-size: 18px;
+	color: white;
+}
+
+.select {
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+nav ul li {
+	list-style: none;
+}
+nav ul li:nth-child(){
+	line-height: 2.5;
+	margin-top: -330px;
+}
+nav ul li:nth-child(2){
+	line-height: 2;
+	margin-top: 7px;
+    width: 100px;
+}
+nav ul li:nth-child(3){
+	line-height: 2;
+	margin-top: 5px;
+	width: 135px;
+	color: black;
+}
+nav ul li:nth-child(4){
+	line-height: 2;
+	margin-top: 4px;
+	width: 130px;
+	color: black;
+}
+nav ul li:nth-child(5){
+	line-height: 2;
+	margin-top: 6px;
+	width: 150px;
+	color: black;
+}
+nav ul li:nth-child(6){
+	line-height: 2;
+	margin-top: 4px;
+	width: 150px;
+	color: black;
+}
+nav ul li:nth-child(7){
+	line-height: 2;
+	margin-top: 4px;
+	width: 200px;
+}
+nav ul li:nth-child(8){
+	line-height: 2;
+	margin-top: 3px;
+	width: 150px;
+}
+.design-archives {
+	position: absolute;
+	top: 50%;
+	margin-left: 230px;
+	margin-top: -340px;
+	padding:0% 1% 0% 1%;  
+	width: 250px;
+	font-size: 18px;
+}
+.archives {
+	font-size: 20px;
+	color: #fff;
+	text-align: left;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+.next{
+	margin-left: -100px;
+	margin-top: -5px;
+    width: 250px;
+}
+.viewall a {
+	margin-left: -100px;
+    margin-top: -200px;
+    width: 150px;
+}
+.zen-resources {
+	position: absolute;
+	top: 50%;
+	margin-left: 230px;
+	margin-top: -60px;
+	padding:0% 1% 0% 1%;  
+	width: 250px;
+	font-size: 18px;
+}
+.resources {
+	position: absolute;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -240px;
+	padding:0% 1% 0% 1%;  
+	width: 250px;
+	font-size: 20px;
+	color: #fff;
+	text-align: left;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+.zen-resources ul li:nth-child(1){
+	line-height: 2;
+	margin-top: -1px;
+	margin-left: -100px;
+	width: 220px;
+}
+.zen-resources ul li:nth-child(2){
+	line-height: 2;
+	margin-top: 41px;
+	margin-left: -100px;
+	width: 150px;
+}
+.zen-resources ul li:nth-child(3){
+	line-height: 2;
+	margin-top: 44px;
+	margin-left: -100px;
+	width: 150px;
+}
+.zen-resources ul li:nth-child(4){
+	line-height: 2;
+	margin-top: 40px;
+	margin-left: -100px;
+	width: 150px;
+}
+.zen-resources ul li:nth-child(5){
+	line-height: 2;
+	margin-top: 40px;
+	margin-left: -100px;
+	width: 150px;
+}
+
+.extra1 {
+	position: relative;
+	background: url(fire-road.jpg) repeat-x;
+	height: 100vh;
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	animation: animate 15s linear infinite;
+}
+
+.extra1::after {
+	content: ' ';
+    height: 250px;
+    width: 250px;
+	position: absolute;
+    margin-left: 154px;
+	margin-top: 1%;
+	background: url('pacman-trans.png') no-repeat 50% top;
+	animation: blink 1s linear infinite;
+
+}
+  
+
