@@ -151,12 +151,12 @@ p {
 a:link { 
 	font-weight: bold; 
 	text-decoration: none; 
-	color: rgb(245, 54, 245);
+	color: rgb(244, 90, 244);
 	}
 a:visited { 
 	font-weight: bold; 
 	text-decoration: none; 
-	color: #f40c27;
+	color: #f54055;
 	}
 a:hover, a:focus, a:active { 
 	text-decoration: underline; 
