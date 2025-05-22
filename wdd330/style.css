@@ -151,16 +151,16 @@ p {
 a:link { 
 	font-weight: bold; 
 	text-decoration: none; 
-	color: rgb(153, 22, 153);
+	color: rgb(245, 54, 245);
 	}
 a:visited { 
 	font-weight: bold; 
 	text-decoration: none; 
-	color: #D4CDDC;
+	color: #f40c27;
 	}
 a:hover, a:focus, a:active { 
 	text-decoration: underline; 
-	color: rgb(230, 39, 172);
+	color: rgb(7, 244, 189);
 	}
 abbr {
 	border-bottom: none;
@@ -229,7 +229,7 @@ header h2 {
 	font-family: 'Montserrat', sans-serif;
 }
 .summary p:last-child{
-	color: blueviolet;
+	color: rgb(92, 245, 9);
 }
 
 .summary p:last-child:after {
@@ -259,6 +259,7 @@ h3 {
 	text-transform: uppercase;
 	font-family: 'Roboto Mono', monospace;
 	animation: glow 1s ease-in-out infinite alternate;
+	color: white;
 }
 p {
 	font-family: 'Roboto Mono', monospace;
@@ -442,25 +443,25 @@ nav ul li:nth-child(3){
 	line-height: 2;
 	margin-top: 5px;
 	width: 135px;
-	color: black;
+	color: rgb(220, 225, 237);
 }
 nav ul li:nth-child(4){
 	line-height: 2;
 	margin-top: 4px;
 	width: 130px;
-	color: black;
+	color:rgb(220, 225, 237);
 }
 nav ul li:nth-child(5){
 	line-height: 2;
 	margin-top: 6px;
 	width: 150px;
-	color: black;
+	color: rgb(220, 225, 237);
 }
 nav ul li:nth-child(6){
 	line-height: 2;
 	margin-top: 4px;
 	width: 150px;
-	color: black;
+	color: rgb(220, 225, 237);
 }
 nav ul li:nth-child(7){
 	line-height: 2;
