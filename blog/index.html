@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" xml:lang="en">
+<html lang="en" xml:lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +19,9 @@
        	<h1>Kids Read for Fun</h1>
 		<nav aria-label="Main navigation" role="navigation">
 			 <ul class="main-nav">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Archive</a></li>
-                <li><a href="#">Search</a></li>
+                <li><a href="#" aria-label="About the blog">About</a>
+                <li><a href="#" aria-label="View the archive of book reviews">Archive</a>
+                <li><a href="#" aria-label="Search books on the blog">Search</a>
              </ul>   
         </nav>
 	</header>
@@ -34,6 +34,15 @@
         <aside id="filters-container" role="region" aria-labelledby="filter-heading">
             <h2 id="filter-heading">Filter Options</h2>
             <h3>Filter form will go here</h3>
+            <form aria-label="Book filter form">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre">
+                    <option value="all">All</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+                <button type="submit">Apply</button>
+            </form>
         </aside>
     </main>
 
