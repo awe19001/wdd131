@@ -21,7 +21,7 @@ header h1 {
 }
 
 a {
-  color: #EFC69B; /* gold color */
+  color: #AF1B3F; /* red for better contrast, or keep gold and add bg in nav */
   text-decoration: none;
 }
 
@@ -30,21 +30,16 @@ a:focus {
   text-decoration: underline;
 }
 
+a:focus, button:focus {
+  outline: 2px solid #EFC69B;
+  outline-offset: 2px;
+}
+
 nav {
   background-color: #f5f2f2; /* red color from your color palette */
   padding: 0.5rem 1rem;
   border-top: 2px solid #EFC69B; /* gold line top nav */
   border-bottom: 2px solid #EFC69B; /* gold line under nav */
-}
-
-nav > ul {
-  display: grid;
-  grid-template-columns: 100px 100px 100px; /* fixed width for each link */
-  justify-content: end; /* aligns grid items to the right */
-  gap: 1rem; /* space between links */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 /* Main layout */
@@ -83,7 +78,7 @@ main {
   padding: 1rem;
   border-radius: 8px;
   font-style: italic;
-  color: #666;
+  color: #333;
 }
 
 .skiptocontent a {
