@@ -93,10 +93,18 @@ main {
   font-weight: bold;
   border-radius: 4px;
   transition: top 0.3s ease;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .skiptocontent a:focus {
   top: 0;            /* Bring it into view when focused */
   outline: 2px solid #EFC69B; /* gold outline for focus visibility */
+  position: static;
+  width: auto;
+  height: auto;
 }
 
