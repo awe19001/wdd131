@@ -1,0 +1,94 @@
+/* General styles */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #473144; /* dark color */
+  background-color: #fff; /* white background */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Impact, serif; /* headline fonts */
+  color: #AF1B3F; /* red color */
+  margin-top: 0;
+}
+
+a {
+  color: #EFC69B; /* gold color */
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+nav > ul {
+  display: grid;
+  grid-template-columns: 100px 100px 100px; /* fixed width for each link */
+  justify-content: end; /* aligns grid items to the right */
+  gap: 1rem; /* space between links */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main layout */
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;  /* articles take 3 parts, filters 1 part */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.main-nav {
+  display: grid;
+  grid-template-columns: 100px 100px 100px; /* columns wide enough for text */
+  justify-content: end;    /* aligns grid to right of container */
+  justify-items: end;      /* aligns items themselves to right */
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Inside each article: two columns */
+.article {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* details narrow column, content wider */
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#filters-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  font-style: italic;
+  color: #666;
+}
+
+.skiptocontent a {
+  position: absolute;
+  top: -40px;        /* Hide it above the visible viewport */
+  left: 0;
+  background: #AF1B3F;  /* red background */
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;      /* Make sure it appears on top when visible */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: top 0.3s ease;
+}
+
+.skiptocontent a:focus {
+  top: 0;            /* Bring it into view when focused */
+  outline: 2px solid #EFC69B; /* gold outline for focus visibility */
+}
+
