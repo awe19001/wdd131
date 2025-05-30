@@ -20,34 +20,19 @@ const articles = [
     ages: '12-16',
     genre: 'Fantasy',
     stars: '⭐⭐⭐⭐'
-  },
-  {
-  id: 3,
-  title: "Belgariad Book One: Pawn of Prophecy",
-  date: "Feb 12, 2022",
-  description:
-    "A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.",
-  imgSrc:
-    "https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
-  imgAlt: "Book cover for Pawn of Prophecy",
-  ages: "12-16",
-  genre: "Fantasy",
-  stars: "⭐⭐⭐⭐⭐"
-}
+  }
 ];
 
-// ✅ Function to render the articles dynamically
-function renderArticles(articleList) {
+document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('articles-container');
-  container.innerHTML = '<h2>Book Reviews</h2>';
 
-  articleList.forEach(article => {
+  articles.forEach(article => {
     const articleElement = document.createElement('article');
     articleElement.classList.add('article');
 
     articleElement.innerHTML = `
       <div class="details">
-        <time datetime="${new Date(article.date).toISOString()}" class="meta">${article.date}</time>
+	    <time datetime="${new Date(article.date).toISOString()}" class="meta">${article.date}</time>
         <p><strong>Ages:</strong> ${article.ages}</p>
         <p><strong>Genre:</strong> ${article.genre}</p>
         <p><strong>Rating:</strong> ${article.stars}</p>
@@ -61,9 +46,4 @@ function renderArticles(articleList) {
 
     container.appendChild(articleElement);
   });
-}
-
-// ✅ Call the function when page loads
-document.addEventListener('DOMContentLoaded', () => {
-  renderArticles(articles);
 });
