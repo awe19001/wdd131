@@ -1,120 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Come Unto Christ Bingo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f2f6f9;
-      text-align: center;
-      margin: 0;
-      padding: 10px;
-    }
-
-    h1 {
-      color: #2b5d3f;
-      font-size: 1.8em;
-      margin-bottom: 0.3em;
-    }
-
-    #bingo-board {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      margin: 20px auto;
-      max-width: 100%;
-    }
-
-    .cell {
-      background: white;
-      border: 2px solid #ccc;
-      padding: 8px;
-      font-size: 0.9em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      word-break: break-word;
-    }
-
-    .cell.marked {
-      background: #a3d9a5;
-      border-color: #5cae65;
-      color: #2b5d3f;
-      font-weight: bold;
-    }
-
-    .cell.center {
-      background: #ffe0b2;
-      font-weight: bold;
-      color: #8a4f00;
-    }
-
-    #win-message {
-      display: none;
-      font-size: 1.5em;
-      color: #2b5d3f;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-size: 1em;
-      border: none;
-      background: #2b5d3f;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #1e442c;
-    }
-
-    @media (max-width: 600px) {
-      .cell {
-        font-size: 0.8em;
-        min-height: 70px;
-        padding: 6px;
-      }
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Come Unto Christ Bingo</h1>
-  <h2>How to play:</h2>
-
-  <li>Mingle and find others who match the description in a square.</li>
-  <li>Once they find someone who fits, that person signs the square.</li>
-  <li>Each person can only sign one square per card.</li>
-  <li>First 5 persons to get 5 in a row (horizontal, vertical, or diagonal) shouts “Come Unto Christ!” and wins.</li>
-
-
-  <div id="bingo-board"></div>
-  <div id="win-message">🎉 You win the "Come Unto Christ" Bingo Game! 🎉</div>
-  <button onclick="resetBoard()">Generate New Card</button>
-
-  <script>
-    const prompts = [
+const prompts = [
       "Reads the Book of Mormon daily",
       "Has been to the temple this year",
       "Shares the gospel on social media",
@@ -223,7 +107,8 @@
 
     // Initialize game
     createBoard();
-  </script>
 
-</body>
-</html>
+    // Preload voices early
+window.speechSynthesis.onvoiceschanged = () => {
+  speechSynthesis.getVoices();
+};
