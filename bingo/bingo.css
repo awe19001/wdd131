@@ -1,10 +1,8 @@
-    * {
-      box-sizing: border-box;
-    }
+ * { box-sizing: border-box; }
 
     body {
       font-family: "Segoe UI", sans-serif;
-      background: #eee0b0;
+      background: #e6cc94;
       text-align: center;
       margin: 0;
       padding: 10px;
@@ -14,6 +12,26 @@
       color: #2b5d3f;
       font-size: 1.8em;
       margin-bottom: 0.3em;
+    }
+
+    h2 {
+      color: #444;
+      margin-top: 0.5em;
+    }
+
+    ol.instructions {
+      list-style-position: inside;
+      padding-left: 0;
+      text-align: left;
+      max-width: 600px;
+      margin: 10px auto 20px;
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    ol.instructions li {
+      margin-bottom: 10px;
     }
 
     #bingo-board {
@@ -48,9 +66,9 @@
     }
 
     .cell.center {
-      background: #ea9e2c;
+      background: #f6a223;
       font-weight: bold;
-      color: #664418;
+      color: #8a4f00;
     }
 
     #win-message {
@@ -86,5 +104,4 @@
       h1 {
         font-size: 1.5em;
       }
-
     }

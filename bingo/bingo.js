@@ -29,6 +29,12 @@ const prompts = [
     const board = document.getElementById("bingo-board");
     const message = document.getElementById("win-message");
 
+    let hasWon = false;
+
+    window.speechSynthesis.onvoiceschanged = () => {
+      speechSynthesis.getVoices(); // preload
+    };
+
     function shuffle(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -39,6 +45,7 @@ const prompts = [
     function createBoard() {
       board.innerHTML = "";
       message.style.display = "none";
+      hasWon = false;
       const cells = prompts.slice();
       shuffle(cells);
 
@@ -63,6 +70,8 @@ const prompts = [
     }
 
     function checkWin() {
+      if (hasWon) return; // prevent multiple wins
+
       const marked = Array.from(board.children).map(cell =>
         cell.classList.contains("marked")
       );
@@ -77,44 +86,37 @@ const prompts = [
 
       for (const line of lines) {
         if (line.every(i => marked[i])) {
+          hasWon = true;
           message.style.display = "block";
           speakCongratulations();
+          launchConfetti();
           return;
         }
       }
     }
 
-   function speakCongratulations() {
-  if ('speechSynthesis' in window) {
-    const utterance = new SpeechSynthesisUtterance("Congratulations! Come Unto Christ!");
-    utterance.lang = 'en-US';
-    // Use a mobile-friendly voice if available
-    const voices = speechSynthesis.getVoices();
-    const voice = voices.find(v => v.lang === 'en-US' && v.name.includes("Google")) || voices[0];
-    if (voice) utterance.voice = voice;
+    function speakCongratulations() {
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance("Congratulations! You win the Come Unto Christ Bingo Game!");
+        utterance.lang = 'en-US';
+        const voices = speechSynthesis.getVoices();
+        const voice = voices.find(v => v.lang === 'en-US' && v.name.includes("Google")) || voices[0];
+        if (voice) utterance.voice = voice;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+      }
+    }
 
-    // Stop any ongoing speech first
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
-  } else {
-    console.warn("SpeechSynthesis not supported");
-  }
-}
+    function launchConfetti() {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
 
     function resetBoard() {
       createBoard();
     }
 
-    // Initialize game
     createBoard();
-
-    // Preload voices early
-window.speechSynthesis.onvoiceschanged = () => {
-  speechSynthesis.getVoices();
-};
-
-confetti({
-  particleCount: 150,
-  spread: 70,
-  origin: { y: 0.6 }
-});
