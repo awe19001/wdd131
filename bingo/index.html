@@ -200,13 +200,22 @@
       }
     }
 
-    function speakCongratulations() {
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance("Congratulations! You win the  Come Unto Christ Bingo Game!");
-        utterance.lang = 'en-US';
-        speechSynthesis.speak(utterance);
-      }
-    }
+   function speakCongratulations() {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance("Congratulations! Come Unto Christ!");
+    utterance.lang = 'en-US';
+    // Use a mobile-friendly voice if available
+    const voices = speechSynthesis.getVoices();
+    const voice = voices.find(v => v.lang === 'en-US' && v.name.includes("Google")) || voices[0];
+    if (voice) utterance.voice = voice;
+
+    // Stop any ongoing speech first
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utterance);
+  } else {
+    console.warn("SpeechSynthesis not supported");
+  }
+}
 
     function resetBoard() {
       createBoard();
