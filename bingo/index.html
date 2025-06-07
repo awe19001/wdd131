@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Come Unto Christ Bingo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f6f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2b5d3f;
+    }
+
+    #bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .cell {
+      background: white;
+      border: 2px solid #ccc;
+      padding: 15px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cell.marked {
+      background: #a3d9a5;
+      border-color: #5cae65;
+      color: #2b5d3f;
+      font-weight: bold;
+    }
+
+    .cell.center {
+      background: #ffe0b2;
+      font-weight: bold;
+      color: #8a4f00;
+    }
+
+    #win-message {
+      display: none;
+      font-size: 24px;
+      color: #2b5d3f;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Come Unto Christ Bingo</h1>
+  <p>Click the squares that apply to you. Get 5 in a row to win!</p>
+  <div id="bingo-board"></div>
+  <div id="win-message">🎉 Come Unto Christ! 🎉</div>
+  <button onclick="resetBoard()">Reset</button>
+
+  <script>
+    const prompts = [
+      "Reads the Book of Mormon daily",
+      "Has been to the temple this year",
+      "Shares the gospel on social media",
+      "Fasted for someone else",
+      "Has served someone this week",
+      "Has a patriarchal blessing",
+      "Said a prayer today",
+      "Invited someone to church for tomorrow’s conference",
+      "Brought a physical scripture tonight",
+      "Testified this month",
+      "Watches Book of Mormon videos",
+      "Writes a journal",
+      "FREE SPACE (Christ is at the center!)",
+      "Studied Come, Follow Me",
+      "Can recite Moroni 10:32",
+      "Has a temple recommend",
+      "Invited someone to FHE tonight",
+      "Has taught a primary class",
+      "Attended seminary or institute",
+      "Can name a General Authority",
+      "Believes in personal revelation",
+      "Has seen prayers answered",
+      "Served a mission (Bonus!)",
+      "Can recite an Article of Faith",
+      "Felt the Spirit this week"
+    ];
+
+    const board = document.getElementById("bingo-board");
+    const message = document.getElementById("win-message");
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function createBoard() {
+      board.innerHTML = "";
+      message.style.display = "none";
+      const cells = prompts.slice();
+      shuffle(cells);
+
+      for (let i = 0; i < 25; i++) {
+        const cell = document.createElement("div");
+        cell.className = "cell";
+        cell.dataset.index = i;
+
+        // Middle cell is free
+        if (i === 12) {
+          cell.textContent = "FREE SPACE";
+          cell.classList.add("center", "marked");
+        } else {
+          cell.textContent = cells[i];
+          cell.addEventListener("click", () => {
+            cell.classList.toggle("marked");
+            checkWin();
+          });
+        }
+
+        board.appendChild(cell);
+      }
+    }
+
+    function checkWin() {
+      const marked = Array.from(board.children).map(cell =>
+        cell.classList.contains("marked")
+      );
+
+      const lines = [
+        // Horizontal
+        [0,1,2,3,4], [5,6,7,8,9], [10,11,12,13,14],
+        [15,16,17,18,19], [20,21,22,23,24],
+        // Vertical
+        [0,5,10,15,20], [1,6,11,16,21], [2,7,12,17,22],
+        [3,8,13,18,23], [4,9,14,19,24],
+        // Diagonals
+        [0,6,12,18,24], [4,8,12,16,20]
+      ];
+
+      for (const line of lines) {
+        if (line.every(i => marked[i])) {
+          message.style.display = "block";
+          return;
+        }
+      }
+    }
+
+    function resetBoard() {
+      createBoard();
+    }
+
+    // Initialize
+    createBoard();
+  </script>
+
+</body>
+</html>
