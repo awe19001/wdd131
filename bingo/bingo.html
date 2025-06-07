@@ -233,7 +233,7 @@
 
     function speakCongratulations() {
       if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance("Congratulations! Come Unto Christ!");
+        const utterance = new SpeechSynthesisUtterance("Congratulations! You win the Come Unto Christ Bingo Game!");
         utterance.lang = 'en-US';
         const voices = speechSynthesis.getVoices();
         const voice = voices.find(v => v.lang === 'en-US' && v.name.includes("Google")) || voices[0];
