@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Credit Card Form</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
-   <script src="script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Joeverlyn Awe">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <script src="https://use.fontawesome.com/f1e0bf0cbc.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
+    <script src="https://use.fontawesome.com/f1e0bf0cbc.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <div id="card-success" class="hidden">
         <i class="fa fa-check"></i>
@@ -25,106 +25,113 @@
         <p id="card-error">Card error</p>
     </div>
 
-<form id="form-container">
-    <div class="main-grid">
-    <div id="card-container">
-    <!-- CARD FRONT -->
-        <div id="card-front">
-            <div id="shadow"></div>
-            <div id="image-container">
-            <span id="amount">paying: <strong>$99</strong></span>
-            <span id="card-image"></span>
-    
-            <img
-            class="card-image"
-            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZGF0YS1uYW1lPSJMYXllciAxIiBpZD0iTGF5ZXJfMSIgdmlld0JveD0iMCAwIDYwIDYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMTAsLmNscy0xMSwuY2xzLTIsLmNscy02LC5jbHMtN3tmaWxsOm5vbmU7fS5jbHMtMXtjbGlwLXJ1bGU6ZXZlbm9kZDt9LmNscy0yLC5jbHMtNXtmaWxsLXJ1bGU6ZXZlbm9kZDt9LmNscy0ze2NsaXAtcGF0aDp1cmwoI2NsaXAtcGF0aCk7fS5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwLXBhdGgtMik7fS5jbHMtNXtmaWxsOiNmZTg2NTc7fS5jbHMtMTAsLmNscy0xMSwuY2xzLTZ7c3Ryb2tlOiNmZTg2NTc7fS5jbHMtMTAsLmNscy02e3N0cm9rZS1saW5lY2FwOnJvdW5kO30uY2xzLTEwLC5jbHMtMTEsLmNscy02LC5jbHMtN3tzdHJva2UtbGluZWpvaW46cm91bmQ7fS5jbHMtNntzdHJva2Utd2lkdGg6NHB4O30uY2xzLTd7c3Ryb2tlOiNlMDZjM2U7fS5jbHMtMTEsLmNscy03e3N0cm9rZS1saW5lY2FwOnNxdWFyZTt9LmNscy0xMCwuY2xzLTExLC5jbHMtN3tzdHJva2Utd2lkdGg6MnB4O30uY2xzLTh7Y2xpcC1wYXRoOnVybCgjY2xpcC1wYXRoLTQpO30uY2xzLTl7ZmlsbDojZmZkYzgyO308L3N0eWxlPjxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xLDQ2VjE4YTUsNSwwLDAsMSw1LTVINTRhNSw1LDAsMCwxLDUsNVY0NmE1LDUsMCwwLDEtNSw1SDZBNSw1LDAsMCwxLDEsNDZabTIsMGEzLDMsMCwwLDAsMywzSDU0YTMsMywwLDAsMCwzLTNWMThhMywzLDAsMCwwLTMtM0g2YTMsMywwLDAsMC0zLDNWNDZaTS0xOSw3MUg3OVYtN0gtMTlWNzFaIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aC0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yLDQ2YTQsNCwwLDAsMCw0LDRINTRhNCw0LDAsMCwwLDQtNFYxOGE0LDQsMCwwLDAtNC00SDZhNCw0LDAsMCwwLTQsNFY0NloiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoLTQiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTksMjlhMiwyLDAsMCwwLDIsMkgyMmEyLDIsMCwwLDAsMi0yVjIzYTIsMiwwLDAsMC0yLTJIMTFhMiwyLDAsMCwwLTIsMnY2WiIvPjwvY2xpcFBhdGg+PC9kZWZzPjx0aXRsZS8+PGcgY2xhc3M9ImNscy0zIj48ZyBjbGFzcz0iY2xzLTQiPjxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTIsNDZhNCw0LDAsMCwwLDQsNEg1NGE0LDQsMCwwLDAsNC00VjE4YTQsNCwwLDAsMC00LTRINmE0LDQsMCwwLDAtNCw0VjQ2WiIvPjwvZz48L2c+PGcgY2xhc3M9ImNscy00Ij48cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Ik0yLDQ2YTQsNCwwLDAsMCw0LDRINTRhNCw0LDAsMCwwLDQtNFYxOGE0LDQsMCwwLDAtNC00SDZhNCw0LDAsMCwwLTQsNFY0NloiLz48L2c+PGxpbmUgY2xhc3M9ImNscy03IiB4MT0iOSIgeDI9IjI4IiB5MT0iMzkiIHkyPSIzOSIvPjxsaW5lIGNsYXNzPSJjbHMtNyIgeDE9IjMyIiB4Mj0iNTEiIHkxPSIzOSIgeTI9IjM5Ii8+PGcgY2xhc3M9ImNscy04Ij48cmVjdCBjbGFzcz0iY2xzLTkiIGhlaWdodD0iMjAiIHdpZHRoPSIyNSIgeD0iNCIgeT0iMTYiLz48L2c+PHBhdGggY2xhc3M9ImNscy0xMCIgZD0iTTksMjlhMiwyLDAsMCwwLDIsMkgyMmEyLDIsMCwwLDAsMi0yVjIzYTIsMiwwLDAsMC0yLTJIMTFhMiwyLDAsMCwwLTIsMnY2WiIvPjxsaW5lIGNsYXNzPSJjbHMtMTEiIHgxPSIxOCIgeDI9IjE4IiB5MT0iMzEiIHkyPSIyMSIvPjxsaW5lIGNsYXNzPSJjbHMtMTEiIHgxPSI5IiB4Mj0iMTciIHkxPSIyNyIgeTI9IjI3Ii8+PGxpbmUgY2xhc3M9ImNscy0xMSIgeDE9IjE4IiB4Mj0iMjQiIHkxPSIyNSIgeTI9IjI1Ii8+PC9zdmc+"
-            height="55px" />
+    <form id="form-container">
+        <div class="main-grid">
+        <div id="card-container">
+        <!-- CARD FRONT -->
+            <div id="card-front" class="card">
+                <div id="shadow"></div>
+                  <span id="amount">paying: <strong>$99</strong></span>
+                  
+                <div id="image-container">
+                    <span id="card-image"></span>
+        
+                    <img
+                    class="card-image"
+                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZGF0YS1uYW1lPSJMYXllciAxIiBpZD0iTGF5ZXJfMSIgdmlld0JveD0iMCAwIDYwIDYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMTAsLmNscy0xMSwuY2xzLTIsLmNscy02LC5jbHMtN3tmaWxsOm5vbmU7fS5jbHMtMXtjbGlwLXJ1bGU6ZXZlbm9kZDt9LmNscy0yLC5jbHMtNXtmaWxsLXJ1bGU6ZXZlbm9kZDt9LmNscy0ze2NsaXAtcGF0aDp1cmwoI2NsaXAtcGF0aCk7fS5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwLXBhdGgtMik7fS5jbHMtNXtmaWxsOiNmZTg2NTc7fS5jbHMtMTAsLmNscy0xMSwuY2xzLTZ7c3Ryb2tlOiNmZTg2NTc7fS5jbHMtMTAsLmNscy02e3N0cm9rZS1saW5lY2FwOnJvdW5kO30uY2xzLTEwLC5jbHMtMTEsLmNscy02LC5jbHMtN3tzdHJva2UtbGluZWpvaW46cm91bmQ7fS5jbHMtNntzdHJva2Utd2lkdGg6NHB4O30uY2xzLTd7c3Ryb2tlOiNlMDZjM2U7fS5jbHMtMTEsLmNscy03e3N0cm9rZS1saW5lY2FwOnNxdWFyZTt9LmNscy0xMCwuY2xzLTExLC5jbHMtN3tzdHJva2Utd2lkdGg6MnB4O30uY2xzLTh7Y2xpcC1wYXRoOnVybCgjY2xpcC1wYXRoLTQpO30uY2xzLTl7ZmlsbDojZmZkYzgyO308L3N0eWxlPjxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xLDQ2VjE4YTUsNSwwLDAsMSw1LTVINTRhNSw1LDAsMCwxLDUsNVY0NmE1LDUsMCwwLDEtNSw1SDZBNSw1LDAsMCwxLDEsNDZabTIsMGEzLDMsMCwwLDAsMywzSDU0YTMsMywwLDAsMCwzLTNWMThhMywzLDAsMCwwLTMtM0g2YTMsMywwLDAsMC0zLDNWNDZaTS0xOSw3MUg3OVYtN0gtMTlWNzFaIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aC0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yLDQ2YTQsNCwwLDAsMCw0LDRINTRhNCw0LDAsMCwwLDQtNFYxOGE0LDQsMCwwLDAtNC00SDZhNCw0LDAsMCwwLTQsNFY0NloiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoLTQiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTksMjlhMiwyLDAsMCwwLDIsMkgyMmEyLDIsMCwwLDAsMi0yVjIzYTIsMiwwLDAsMC0yLTJIMTFhMiwyLDAsMCwwLTIsMnY2WiIvPjwvY2xpcFBhdGg+PC9kZWZzPjx0aXRsZS8+PGcgY2xhc3M9ImNscy0zIj48ZyBjbGFzcz0iY2xzLTQiPjxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTIsNDZhNCw0LDAsMCwwLDQsNEg1NGE0LDQsMCwwLDAsNC00VjE4YTQsNCwwLDAsMC00LTRINmE0LDQsMCwwLDAtNCw0VjQ2WiIvPjwvZz48L2c+PGcgY2xhc3M9ImNscy00Ij48cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Ik0yLDQ2YTQsNCwwLDAsMCw0LDRINTRhNCw0LDAsMCwwLDQtNFYxOGE0LDQsMCwwLDAtNC00SDZhNCw0LDAsMCwwLTQsNFY0NloiLz48L2c+PGxpbmUgY2xhc3M9ImNscy03IiB4MT0iOSIgeDI9IjI4IiB5MT0iMzkiIHkyPSIzOSIvPjxsaW5lIGNsYXNzPSJjbHMtNyIgeDE9IjMyIiB4Mj0iNTEiIHkxPSIzOSIgeTI9IjM5Ii8+PGcgY2xhc3M9ImNscy04Ij48cmVjdCBjbGFzcz0iY2xzLTkiIGhlaWdodD0iMjAiIHdpZHRoPSIyNSIgeD0iNCIgeT0iMTYiLz48L2c+PHBhdGggY2xhc3M9ImNscy0xMCIgZD0iTTksMjlhMiwyLDAsMCwwLDIsMkgyMmEyLDIsMCwwLDAsMi0yVjIzYTIsMiwwLDAsMC0yLTJIMTFhMiwyLDAsMCwwLTIsMnY2WiIvPjxsaW5lIGNsYXNzPSJjbHMtMTEiIHgxPSIxOCIgeDI9IjE4IiB5MT0iMzEiIHkyPSIyMSIvPjxsaW5lIGNsYXNzPSJjbHMtMTEiIHgxPSI5IiB4Mj0iMTciIHkxPSIyNyIgeTI9IjI3Ii8+PGxpbmUgY2xhc3M9ImNscy0xMSIgeDE9IjE4IiB4Mj0iMjQiIHkxPSIyNSIgeTI9IjI1Ii8+PC9zdmc+"
+                    height="55px" />
+                </div>
+
+        <!-- Card Number -->
+                <div id="cardnumber-container">
+                    <label for="card-number">Card Number</label>
+                        <input
+                        type="tel"
+                        id="card-number"
+                        name="card-number"
+                        placeholder="1234 5678 9101 1112"
+                        maxlength="19"
+                        pattern="[0-9\s]{13,19}"
+                        required
+                        autocomplete="cc-number"
+                        />
+                </div>
+
+        <!-- Card Holder -->
+                <div id="cardholder-container">
+                    <label for="card-holder">Card Holder</label>
+                    <input
+                        type="text"
+                        id="card-holder"
+                        name="card-holder"
+                        placeholder="e.g. John Doe"
+                        required
+                        pattern="[A-Za-z\s'-]+"
+                        autocomplete="cc-name"
+                    />
+                </div>
+
+        <!-- Expiration Date -->
+                <div id="exp-container">
+                    <label for="card-exp">Expiration</label>
+                    <div class="input-group">
+                            <input
+                                id="card-month"
+                                name="card-month"
+                                type="text"
+                                placeholder="MM"
+                                maxlength="2"
+                                pattern="0[1-9]|1[0-2]"
+                                required
+                                autocomplete="cc-exp-month"
+                            />
+                            <input
+                                id="card-year"
+                                name="card-year"
+                                type="text"
+                                placeholder="YY"
+                                maxlength="2"
+                                pattern="[0-9]{2}"
+                                required
+                                autocomplete="cc-exp-year"
+                            />
+                    </div>
+                </div>
+
+        <!-- CVC / CVV -->
+                <div id="cvc-container">
+                    <label for="card-cvc">CVC/CVV</label>
+                    <input
+                        id="card-cvc"
+                        name="card-cvc"
+                        placeholder="XXX or XXXX"
+                        type="tel"
+                        minlength="3"
+                        maxlength="4"
+                        pattern="[0-9]{3,4}"
+                        required
+                        autocomplete="cc-csc"
+                    />
+                    <p>Last 3 or 4 digits</p> 
+                </div>
+            </div>
+        <!-- end card front -->
+
+        <!-- CARD BACK -->
+            <div id="card-back">
+                <div id="card-stripe"></div>
+            </div>
+        <!-- end card back -->
         </div>
 
-    <!-- Card Number -->
-        <label for="card-number">Card Number</label>
-            <input
-            type="text"
-            id="card-number"
-            name="card-number"
-            placeholder="1234 5678 9101 1112"
-            maxlength="19"
-            pattern="[0-9\s]{13,19}"
-            required
-            autocomplete="cc-number"
-            />
+            <!-- Hidden token input for payment token (optional) -->
+            <input type="hidden" id="card-token" name="card-token" />
 
-    <!-- Card Holder -->
-        <div id="cardholder-container">
-        <label for="card-holder">Card Holder</label>
-        <input
-            type="text"
-            id="card-holder"
-            name="card-holder"
-            placeholder="e.g. John Doe"
-            required
-            autocomplete="cc-name"
-        />
+            <!-- Submit Button -->
+            <button type="submit" id="card-btn">Submit</button>
         </div>
 
-    <!-- Expiration Date -->
-        <div id="exp-container">
-        <label for="card-exp">Expiration</label>
-        <input
-            id="card-month"
-            name="card-month"
-            type="text"
-            placeholder="MM"
-            maxlength="2"
-            pattern="0[1-9]|1[0-2]"
-            required
-            autocomplete="cc-exp-month"
-        />
-        <input
-            id="card-year"
-            name="card-year"
-            type="text"
-            placeholder="YY"
-            maxlength="2"
-            pattern="[0-9]{2}"
-            required
-            autocomplete="cc-exp-year"
-        />
-        </div>
-
-    <!-- CVC / CVV -->
-        <div id="cvc-container">
-        <label for="card-cvc">CVC/CVV</label>
-        <input
-            id="card-cvc"
-            name="card-cvc"
-            placeholder="XXX or XXXX"
-            type="text"
-            minlength="3"
-            maxlength="4"
-            pattern="[0-9]{3,4}"
-            required
-            autocomplete="cc-csc"
-        />
-        <p>Last 3 or 4 digits</p> 
-        </div>
-        </div>
-     <!-- end card front -->
-
-     <!-- CARD BACK -->
-        <div id="card-back">
-            <div id="card-stripe"></div>
-        </div>
-     <!-- end card back -->
-    </div>
-
-        <!-- Hidden token input for payment token (optional) -->
-        <input type="hidden" id="card-token" name="card-token" />
-
-         <!-- Submit Button -->
-        <button type="submit" id="card-btn">Submit</button>
-        </div>
-</form>
+    </form>
 
 
 </body>
