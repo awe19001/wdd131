@@ -187,8 +187,17 @@
       for (const line of lines) {
         if (line.every(i => marked[i])) {
           message.style.display = "block";
+          speakCongratulations();
           return;
         }
+      }
+    }
+
+    function speakCongratulations() {
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance("Congratulations! Come Unto Christ!");
+        utterance.lang = 'en-US';
+        speechSynthesis.speak(utterance);
       }
     }
 
@@ -196,6 +205,7 @@
       createBoard();
     }
 
+    // Initialize game
     createBoard();
   </script>
 
