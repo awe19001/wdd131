@@ -11,19 +11,19 @@ const prompts = [
       "Testified this month",
       "Watches Book of Mormon videos",
       "Writes a journal",
-      "FREE SPACE (Christ is at the center!)",
       "Studied Come, Follow Me",
       "Can recite Moroni 10:32",
       "Has a temple recommend",
       "Invited someone to FHE tonight",
       "Has taught a primary class",
-      "Attended seminary or institute",
+      "Has attended seminary or institute",
       "Can name a General Authority",
       "Believes in personal revelation",
       "Has seen prayers answered",
-      "Served a mission (Bonus!)",
+      "Served a mission",
       "Can recite an Article of Faith",
-      "Felt the Spirit this week"
+      "Felt the Spirit this week",
+      "Shares a talk in the pulpit this year"
     ];
 
     const board = document.getElementById("bingo-board");
