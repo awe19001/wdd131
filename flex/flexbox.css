@@ -1,0 +1,88 @@
+/* === Base Styles === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 1em;
+  font-family: Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Navbar === */
+.main-nav {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  padding: 0;
+  gap: 1em; /* Try flex: 0 1 5em on li for different behavior */
+}
+
+.main-nav li {
+  /* Optional: Uncomment for fixed-width items */
+  /* flex: 0 1 5em; */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 0;
+}
+
+/* === Media Card (used in media-card-container and gallery) === */
+.media-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  text-align: center;
+  margin-top: 2em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.media-card__image img {
+  max-width: 100%;
+}
+
+.media-card__content {
+  max-width: 60ch;
+}
+
+@media screen and (min-width: 550px) {
+  .media-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .media-card__image {
+    flex: 0 1 250px;
+  }
+
+  .media-card__content {
+    flex: 0 1 60ch;
+  }
+}
+
+/* === Gallery Styles === */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.gallery .media-card {
+  flex: 1 1 460px;
+}
