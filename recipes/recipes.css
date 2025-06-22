@@ -46,14 +46,14 @@ header {
   padding: 1rem 2rem;
  }
 
- .header-content {
+ .header-contentdinhi {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
 
-.header-content h1 {
+.header-contentdinhi h1 {
   font-family: 'Patrick Hand', cursive;
   text-transform: uppercase;
   letter-spacing: 2px; /* optional, for spacing */
@@ -82,7 +82,7 @@ header {
 }
 
 /* Search Form */
-.search-form {
+.search-formholder {
   margin-top: 1rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -96,14 +96,14 @@ header {
   box-sizing: border-box;
 }
 
-.search-form input[type="search"] {
+.search-formholder input[type="search"] {
   flex: 1 1 250px;               /* grows/shrinks with screen size */
   padding: 0.5rem;
   font-size: 1rem;
   min-width: 150px;
 }
 
-.search-form button {
+.search-formholder button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   background: #952503;
@@ -112,9 +112,9 @@ header {
   cursor: pointer;
 }
 
-/* Recipe Container */
+/* Recipe Containerhere */
 
-  .recipe-container {
+  .recipe-containerhere {
     display: flex;
     flex-direction: row; /* change to row for side-by-side cards on desktop */
     flex-wrap: wrap;    /* allows cards to wrap onto next line if needed */
@@ -205,7 +205,7 @@ footer {
   margin-top: 2rem;
 }
 
-.footer-content {
+.footer-contentpud {
   display: flex;
   justify-content: space-between; /* pushes attribution left, social right */
   align-items: center;
@@ -252,7 +252,7 @@ header {
   box-sizing: border-box; /* just in case */
  }
 
-.header-content {
+.header-contentdinhi {
     display: flex;
     flex-wrap: wrap;  
     justify-content: center;
@@ -269,13 +269,13 @@ header {
   }
 
 /* Search form centered and stacked */
-  .search-form {
+  .search-formholder {
     gap: 0.5rem;
     max-width: 412px;
     align-items: center; /* vertically center them */
     }
 
-  .search-form input[type="search"] {
+  .search-formholder input[type="search"] {
       width: 50px;
       box-sizing: border-box;
       padding: 6px;
@@ -283,7 +283,7 @@ header {
       flex-grow: 0.5; 
     }
 
-   .search-form button {
+   .search-formholder button {
       padding: 6px 12px;
       font-size: 1rem;
       cursor: pointer;
@@ -292,7 +292,7 @@ header {
 
   /* Recipe container stacks cards vertically */
 
-    .recipe-container {
+    .recipe-containerhere {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
