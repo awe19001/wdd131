@@ -1,0 +1,365 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #0e0e0e;
+}
+
+/* Header */
+header {
+  background: #05a7f8;
+  color: black;
+  padding: 1rem 2rem;
+ }
+
+ .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header-content h1 {
+  font-family: 'Patrick Hand', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* optional, for spacing */
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+/* Navigation */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.nav-list li {
+  margin: 0 1rem;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Search Form */
+.search-form {
+  margin-top: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  margin: 1rem auto;             /* center form in parent */
+  padding: 0 1rem;               /* add some padding on the sides */
+  box-sizing: border-box;
+}
+
+.search-form input[type="search"] {
+  flex: 1 1 250px;               /* grows/shrinks with screen size */
+  padding: 0.5rem;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #952503;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Recipe Container */
+
+  .recipe-container {
+    display: flex;
+    flex-direction: row; /* change to row for side-by-side cards on desktop */
+    flex-wrap: wrap;    /* allows cards to wrap onto next line if needed */
+    align-items: center;
+    padding: 1rem;
+    max-width: 960px;           /* wider max-width for desktop */
+    margin: 0 auto;             /* center container */
+    box-sizing: border-box; /* include padding in width */
+    gap: 1.5rem;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
+}
+
+.recipe-card img {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
+.recipe-content {
+  width: 60%;
+  padding: 1rem;
+}
+
+
+.category {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: black;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-tag {
+  display: inline-block;
+  background-color: #ffe0b2; /* light orange for dessert */
+  color: #1515d8; /* darker orange text */
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+}
+
+.recipe-card h2 {
+  padding: 0.5rem 1rem;
+  color: #052df8;
+}
+
+.recipe-card p {
+  padding: 0 1rem 1rem 1rem;
+}
+
+/* Rating */
+.rating {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.icon-star,
+.icon-star-empty {
+  color: gold;
+}
+
+/* Footer */
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* pushes attribution left, social right */
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* makes it responsive on smaller screens */
+  gap: 1rem; /* some space if it wraps */
+}
+
+.attribution {
+  font-size: 0.6em;
+  margin-top: 1rem;
+  color: black;
+}
+
+.attribution a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Social Media */
+.social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.social a {
+  margin: 0 0.5rem;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Small phones) */
+@media (max-width: 480px) {
+   
+header {
+  padding: 1rem;
+  box-sizing: border-box; /* just in case */
+ }
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 20px;
+
+    max-width: 100%;
+  }
+
+  .logo {
+  width: 50px; /* adjust size as needed */
+  height: auto;
+  }
+
+/* Search form centered and stacked */
+  .search-form {
+    gap: 0.5rem;
+    max-width: 412px;
+    align-items: center; /* vertically center them */
+    }
+
+  .search-form input[type="search"] {
+      width: 50px;
+      box-sizing: border-box;
+      padding: 6px;
+      font-size: 1rem;
+      flex-grow: 0.5; 
+    }
+
+   .search-form button {
+      padding: 6px 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      flex-shrink: 0;  /* don’t shrink too much */
+    } 
+
+  /* Recipe container stacks cards vertically */
+
+    .recipe-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        align-items: center;
+        }
+
+  /* Each recipe card is 100% width for easy reading */
+  .recipe-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;  /* center the card inside the container */
+    max-width: 400px;
+    gap: 1rem;
+    box-sizing: border-box;
+    background-color: #12a0e8;
+ 
+  }
+  
+  /* Recipe image on left */
+  .recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+
+  /* Recipe details */
+  .recipe-card > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+
+  .recipe-content p:nth-of-type(1),
+  .recipe-content p:nth-of-type(2) {
+    display: none;
+  }
+
+  .category-tag {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Recipe name styling */
+  .recipe-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    padding-left: 0;
+  }
+
+  /* Rating aligned under name */
+  .rating {
+    margin-top: 0;
+  }
+
+  /* Footer: keep text small and centered */
+  footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #eee;
+  text-align: center;
+  width: 100%; 
+  box-sizing: border-box; 
+  }
+
+    /* Social Media */
+   .social {
+    order: -1; /* Moves social icons to the top of the footer */
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+  .attribution {
+    font-size: 0.6em;
+    color: black;
+    text-align: center;
+    width: 100%;
+  }
+
+ .social img {
+   width: 34px;
+   height: 34px;
+ }
+}
