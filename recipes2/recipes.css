@@ -396,6 +396,7 @@ header {
    width: 34px;
    height: 34px;
  }
+}
 
  /* Medium breakpoint for tablets */
 @media screen and (min-width: 600px) {
@@ -414,4 +415,4 @@ header {
     margin: 0 auto;
   }
 }
-}
+
