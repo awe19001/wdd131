@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recipe Book</title>
+  <meta name="description" content="A delicious and easy-to-make recipe website for every occasion." />
+  <meta name="author" content="Joeverlyn Awe" />
+  <meta name="keywords" content="recipes, cooking, food, healthy, easy meals" />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="recipes.css" />
+  <script src="main.js" type="module" defer></script>
+
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Tasty Recipes - Delicious Meals Made Easy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Discover quick, tasty recipes for every occasion. Find your next favorite meal now!" />
+  <meta property="og:image" content="images/recipe-book.png" />
+  <meta property="og:url" content="index.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+
+<body>
+  <a href="#mymain-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <div class="header-contentdinhi">
+      <img src="images/images/recipe-book.png" alt="Recipe book logo" class="logo" />
+      <h1>RecipeBook</h1>
+    </div>
+    <form id="search-form" class="search-formholder" role="search" aria-label="Recipe search form">
+      <input id="search-input" type="search" placeholder="Search recipes..." aria-label="Search recipes" />
+      <button id="search-button" type="submit">Search</button>
+    </form>
+  </header>
+
+  <main id="mymain-content" role="main">
+    <section class="recipe-containerhere">
+      <article class="recipe-card">
+        <img src="images/images/apple-crisp.jpg" alt="A serving of warm apple crisp with a scoop of ice cream" />
+        <div class="recipe-content">
+          <span class="category">Dessert</span>
+          <h2>Apple Crisp</h2>
+          <p>Apple crisp is a warm dessert made with sliced apples and a sweet, crumbly topping.</p>
+          <p>
+            This classic treat combines the natural sweetness of fresh apples with a crunchy, golden crust made from oats,
+            brown sugar, and butter. Perfect served warm with a scoop of vanilla ice cream or a dollop of whipped cream.
+            Ideal for cozy nights and holiday gatherings!
+          </p>
+          <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star-empty">☆</span>
+          </span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-contentpud">
+      <div class="attribution">
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
+          Recipe icons created by Freepik - Flaticon
+        </a>
+      </div>
+
+      <div class="social">
+        <!-- Accessible social media icons -->
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="images/images/instagram_icon.svg" alt="Instagram icon" />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+          <img src="images/images/youtube_icon.svg" alt="YouTube icon" />
+        </a>
+        <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest">
+          <img src="images/images/pinterest_icon.svg" alt="Pinterest icon" />
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

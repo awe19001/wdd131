@@ -167,13 +167,20 @@ header {
   display: inline-block;
   background-color: #ffe0b2; /* light orange for dessert */
   color: #1515d8; /* darker orange text */
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 2px 8px;
+
   border-radius: 12px;
   margin-bottom: 0.5rem;
   width: fit-content;
+  padding: 4px 8px;           /* Some space inside the tag */
+  margin: 2px 4px 2px 0;      /* Space between tags */
+  border-radius: 12px;        /* Rounded edges */
+  border: 1px solid #ccc;     /* Subtle border */
+  user-select: none;          /* Prevent text selection on tags */
+  cursor: default;            /* Normal cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .recipe-card h2 {

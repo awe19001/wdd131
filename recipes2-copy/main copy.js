@@ -57,6 +57,8 @@ function renderRecipe(recipe) {
   `;
 }
 
+
+
 // STEP 6: Init function to run on page load
 function init() {
   const randomRecipe = getRandomRecipe();
