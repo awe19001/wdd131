@@ -23,7 +23,7 @@ export const recipes = [
     category: 'Snack',
     tags: ['Dessert', 'Sweet', 'Snack']
   },
-   {
+  {
     title: 'Apple Crisp',
     description: 'A dessert made with tender baked apples, fragrant cinnamon, and a buttery oat topping that bakes to golden perfection.',
     image: 'images/images/apple-crisp.jpg',
@@ -31,7 +31,7 @@ export const recipes = [
     category: 'Dessert',
     tags: ['Dessert', 'Fruit']
   },
-   {
+  {
     title: 'Escalopes de Poulet à la Crème',
     description: 'A French favorite, this dish features tender chicken cutlets sautéed until golden, then simmered in a luxurious cream sauce infused with white wine, shallots, and fresh herbs.',
     image: 'images/images/escalopes-de-poulet-a-la-creme.webp',
@@ -39,7 +39,7 @@ export const recipes = [
     category: 'Dinner',
     tags: ['Chicken', 'French', 'Cream Sauce']
   },
-   {
+  {
     title: 'German Gooseberry Cake (Stachelbeerkuchen)',
     description: 'This traditional German cake combines a soft, buttery sponge with tart gooseberries and a sweet streusel topping.',
     image: 'images/images/german-gooseberry-cake.jpg',
