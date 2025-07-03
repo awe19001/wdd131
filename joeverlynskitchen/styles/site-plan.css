@@ -96,14 +96,11 @@ p {
   background-color: #F9DC5C;
 }
 .accent1 {
-  background-color: #F4FFFD;
-}
-.accent2 {
-  background-color: #465362;
+  background-color: #396E94;
 }
 
 p.colored {
-  background-color: #465362;
+  background-color: #396E94;
   color: var(--paragraph-color-on-color);
 }
 
