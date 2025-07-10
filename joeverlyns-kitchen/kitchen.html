@@ -1,90 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joeverlyn's Kitchen</title>
-  <meta name="description" content="A  simple, delicious, and budget-friendly recipes with beginner cooks and students." />
-  <meta name="author" content="Joeverlyn Awe" />
-  <meta name="keywords" content="recipes, cooking, food, healthy, easy meals, tips, Blog" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+  <meta name="description" content="Easy, delicious, and budget-friendly recipes for everyone." />
   <link rel="stylesheet" href="style.css" />
-  <script src="main.js" type="module" defer></script>
-
-  <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="Tasty Recipes - Delicious Meals Made Easy" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="Discover quick, tasty recipes for every occasion. Find your next favorite meal now!" />
-  <meta property="og:image" content="images/homepage.png" />
-  <meta property="og:url" content="kitchen.html" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <a href="#mymain-content" class="skip-link">Skip to main content</a>
 
-  <header role="banner">
-    <div class="header-contentdinhi">
-      <img src="images/JLogo.png" alt="Joeverlyn's Logo" class="logo" />
-      <h1>Joeverlyn's Kitchen</h1>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="images/jk-logo.png" alt="Joeverlyn's Logo" class="logo" />
+        <span class="site-name">Joeverlyn's Kitchen</span>
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="kitchen.html">Home</a></li>
+          <li><a href="recipe.html">Recipe</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     </div>
-    <form id="search-form" class="search-formholder" role="search" aria-label="Recipe search form">
-      <input id="search-input" type="search" placeholder="Search recipes..." aria-label="Search recipes" />
-      <button id="search-button" type="submit">Search</button>
-    </form>
   </header>
 
-  <main id="mymain-content" role="main">
-    <section class="recipe-containerhere">
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="hero">
+      <img src="images/welcome.png" alt="A featured dish from Joeverlyn's Kitchen" />
+     
+      <h1>Hello!</h1>
+      <p>Welcome to Joeverlyn's Kitchen - your go-to spot for simple, delicious and budget-friendly recipes. Whether you're a student, a first-time cook or just hungry and in a hurry, you're in the place.</p>
+      <p>"You don't need fancy ingredients to make good food -  just heart and a little heat." </p>
+    </section>
+
+    <section class="recipes">
       <article class="recipe-card">
-        <img src="images/images/apple-crisp.jpg" alt="A serving of warm apple crisp with a scoop of ice cream" />
-        <div class="recipe-content">
-          <span class="category">Dessert</span>
-          <h2>Apple Crisp</h2>
-          <p>Apple crisp is a warm dessert made with sliced apples and a sweet, crumbly topping.</p>
-          <p>
-            This classic treat combines the natural sweetness of fresh apples with a crunchy, golden crust made from
-            oats,
-            brown sugar, and butter. Perfect served warm with a scoop of vanilla ice cream or a dollop of whipped cream.
-            Ideal for cozy nights and holiday gatherings!
-          </p>
-          <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star-empty">☆</span>
-          </span>
-        </div>
+        <img src="images/apple-crisp.jpg" alt="Apple Crisp" />
+        <h2>Apple Crisp</h2>
+        <p>A warm dessert with fresh apples, oats, and cinnamon. Perfect with ice cream.</p>
+        <a href="#">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="images/spaghetti.jpg" alt="Spaghetti" />
+        <h2>Easy Spaghetti</h2>
+        <p>Quick and budget-friendly spaghetti recipe for a satisfying dinner.</p>
+        <a href="#">View Recipe</a>
       </article>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <div class="footer-contentpud">
-      <div class="attribution">
-        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
-          Recipe icons created by Freepik - Flaticon
-        </a>
-      </div>
-
-      <div class="social">
-        <!-- Accessible social media icons -->
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="images/images/instagram_icon.svg" alt="Instagram icon" />
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
-          <img src="images/images/youtube_icon.svg" alt="YouTube icon" />
-        </a>
-        <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest">
-          <img src="images/images/pinterest_icon.svg" alt="Pinterest icon" />
-        </a>
-      </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Joeverlyn's Kitchen. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram"><img src="images/instagram_icon.svg" alt="Instagram" /></a>
+      <a href="#" aria-label="YouTube"><img src="images/youtube_icon.svg" alt="YouTube" /></a>
+      <a href="#" aria-label="Pinterest"><img src="images/pinterest_icon.svg" alt="Pinterest" /></a>
     </div>
   </footer>
-</body>
 
+</body>
 </html>
