@@ -116,6 +116,10 @@ body {
   cursor: pointer;
 }
 
+.hero {
+  text-align: center;
+}
+
 .hero img {
   max-width: 100%;
   height: auto;
@@ -123,6 +127,107 @@ body {
   margin: 0 auto; /* Optional: centers the image */
   padding-bottom: 30px;
 }
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #e67e22;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #d35400;
+}
+
+
+
+
+/* Footer Styles */
+.site-footer {
+  background-color: #F9DC5C;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row; /* This ensures items are in a row */
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left - Logo */
+.footer-logo img {
+  width: 60px;
+  height: auto;
+}
+
+/* Center - Social Media */
+.footer-social {
+  display: flex;
+  flex-direction: row; /* change this from column to row */
+  align-items: center;
+  justify-content: center; /* optional: center icons horizontally */
+  gap: 10px; /* space between icons */
+  text-align: center;
+}
+
+
+.footer-social h4 {
+  margin-bottom: 10px;
+  color: #c0392b;
+}
+
+.footer-social a img {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover img {
+  transform: scale(1.2);
+}
+
+/* Right - Links */
+.footer-links {
+  text-align: right;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  color: #c0392b;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #396E94;
+}
+
+.footer-links a:hover {
+  color: #d35400;
+}
+
 
 
 @media (max-width: 768px) {
@@ -204,15 +309,7 @@ body {
   background-color: #d35400;
 }
 
-/* Footer */
-.site-footer {
-  background-color: #fff8f0;
-  text-align: center;
-  padding: 20px;
-  border-top: 2px solid #ffd1a4;
-}
-
-.social-icons img {
-  width: 25px;
-  margin: 0 8px;
+.footer-links {
+ text-align: center;
+ margin-top: 20px;
 }
