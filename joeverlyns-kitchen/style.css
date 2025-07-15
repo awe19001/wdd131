@@ -145,9 +145,6 @@ body {
   background-color: #d35400;
 }
 
-
-
-
 /* Footer Styles */
 .site-footer {
   background-color: #F9DC5C;
@@ -157,13 +154,20 @@ body {
 
 .footer-container {
   display: flex;
-  flex-direction: row; /* This ensures items are in a row */
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start;  /* Align children to top */
   max-width: 1200px;
   margin: auto;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+.footer-social,
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Align content to top */
+  text-align: center;
 }
 
 /* Left - Logo */
@@ -175,13 +179,12 @@ body {
 /* Center - Social Media */
 .footer-social {
   display: flex;
-  flex-direction: row; /* change this from column to row */
+  flex-direction: column; 
   align-items: center;
   justify-content: center; /* optional: center icons horizontally */
   gap: 10px; /* space between icons */
   text-align: center;
 }
-
 
 .footer-social h4 {
   margin-bottom: 10px;
@@ -199,13 +202,26 @@ body {
   transform: scale(1.2);
 }
 
-/* Right - Links */
-.footer-links {
-  text-align: right;
+.icons-container {
+  display: flex;
+  flex-direction: row; /* align icons horizontally */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
+.icons-container a img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.icons-container a:hover img {
+  transform: scale(1.2);
+}
+
+/* Right - Links */
 .footer-links h4 {
-  margin-bottom: 10px;
   color: #c0392b;
 }
 
@@ -230,21 +246,78 @@ body {
 
 
 
-@media (max-width: 768px) {
+/* This is for the recipe.html page */
+/* Center lists only on the recipe page */
+/* Remove bullets and numbers on recipe page */
+.recipe-page .section ul,
+.recipe-page .section ol {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: center; /* Optional: center the text */
+}
+.recipe-page .section li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.recipe-card ul {
+  list-style-type: none;  /* Remove bullets */
+  padding-left: 0;        /* Remove left padding */
+  margin-left: 0;         /* Remove left margin */
+}
+
+.recipe-card ol {
+  list-style-type: none;  /* Remove numbers */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.recipe-card ol li::before {
+  content: "";            /* Remove any default markers */
+}
+
+#filtered-recipes h1 {
+  color: #ED254E;
+}
+
+#filtered-recipes h2 {
+  color: black;
+  font-weight: bold;
+}
+
+
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
   .main-nav {
     display: none;
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 5px;
+    background-color: transparent;
   }
 
   .main-nav ul {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .main-nav li {
+    background: none;  /* important to remove inherited bg */
+  }
+
+  .main-nav a {
+    background-color: orange; /* keeps the purple/whatever theme */
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+
+  .main-nav a:hover {
+    background-color: #ED254E;
+    color: white;
   }
 
   .main-nav.active {
@@ -309,7 +382,120 @@ body {
   background-color: #d35400;
 }
 
-.footer-links {
- text-align: center;
- margin-top: 20px;
+/* Regular mobile phones */
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 5px;
+    background-color: transparent;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li {
+    background: none;  /* important to remove inherited bg */
+  }
+
+  .main-nav a {
+    background-color: orange; /* keeps the purple/whatever theme */
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+
+  .main-nav a:hover {
+    background-color: #ED254E;
+    color: white;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+    .footer-container {
+    flex-direction: column !important; /* Stack items vertically */
+    align-items: center !important;    /* Center items horizontally */
+    text-align: center;
+  }
+  
+  .footer-logo,
+  .footer-social,
+  .footer-links {
+    width: 100%;
+    margin-bottom: 20px; /* space between each section */
+  }
+
+  .footer-links h4 {
+    margin-top: 0; /* ensure no extra top space */
+  }
+}
+
+
+
+/* Very small phones */
+@media (max-width: 480px) {
+.main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 5px;
+    background-color: transparent;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li {
+    background: none;  /* important to remove inherited bg */
+  }
+
+  .main-nav a {
+    background-color: orange; /* keeps the purple/whatever theme */
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+
+  .main-nav a:hover {
+    background-color: #ED254E;
+    color: white;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  
+ .footer-container {
+    flex-direction: column !important; /* Stack items vertically */
+    align-items: center !important;    /* Center items horizontally */
+    text-align: center;
+  }
+  
+  .footer-logo,
+  .footer-social,
+  .footer-links {
+    width: 100%;
+    margin-bottom: 20px; /* space between each section */
+  }
+
+  .footer-links h4 {
+    margin-top: 0; /* ensure no extra top space */
+  }
 }
