@@ -286,6 +286,20 @@ body {
   font-weight: bold;
 }
 
+/* Default recipe image styling */
+#default-recipe img {
+  display: block;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Match dynamically generated recipe cards */
+#filtered-recipes .recipe-card img {
+  display: block;
+  max-width: 1000px;  /* Match the width of recipe.png */
+  width: 100%;
+}
+
 
 
 /* Tablets */

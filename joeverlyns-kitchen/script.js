@@ -1,9 +1,11 @@
 const toggleBtn = document.getElementById('menu-toggle');
 const nav = document.getElementById('main-nav');
 
-toggleBtn.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
+if (toggleBtn && nav) {
+  toggleBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+}
 
 import { recipes } from './recipes.mjs';
 
@@ -62,4 +64,81 @@ const defaultSection = document.getElementById('default-recipe');
       
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const recipeName = params.get("recipe");
+
+  const recipeData = {
+    "pancit-canton": {
+      title: "🍜 Pancit Canton",
+      ingredients: [
+        "200g pancit canton noodles",
+        "1 cup chopped cabbage",
+        "1/2 cup sliced carrots",
+        "1/2 cup sliced green beans",
+        "1 onion, sliced",
+        "2 garlic cloves, minced",
+        "1/2 cup sliced chicken or pork",
+        "2 tbsp soy sauce",
+        "1 tbsp oyster sauce",
+        "Salt and pepper to taste",
+        "1 tbsp oil"
+      ],
+      instructions: [
+        "Heat oil in a pan and sauté garlic and onions until fragrant.",
+        "Add chicken or pork, cook until browned.",
+        "Add vegetables and stir-fry for 3–4 minutes.",
+        "Pour in soy sauce and oyster sauce. Mix well.",
+        "Add pancit canton noodles and 1/2 cup water.",
+        "Simmer until noodles are soft and sauce is absorbed.",
+        "Serve hot with calamansi if desired."
+      ]
+    },
+    "halo-halo": {
+      title: "🍧 Halo-Halo",
+      ingredients: [
+        "1/2 cup shaved ice",
+        "2 tbsp sweetened bananas (saba)",
+        "2 tbsp sweetened red mung beans",
+        "2 tbsp sweetened jackfruit",
+        "2 tbsp sweetened coconut",
+        "1 scoop ube ice cream",
+        "1 slice leche flan",
+        "Evaporated milk"
+      ],
+      instructions: [
+        "In a tall glass, layer all sweetened fruits and jellies.",
+        "Add shaved ice on top.",
+        "Pour evaporated milk generously over the ice.",
+        "Top with leche flan and ube ice cream.",
+        "Serve immediately and mix before eating!"
+      ]
+    }
+  };
+
+  const recipe = recipeData[recipeName];
+
+  if (recipe) {
+    document.getElementById("recipe-title").textContent = recipe.title;
+
+    const ingList = document.getElementById("ingredients-list");
+    ingList.innerHTML = "";
+    recipe.ingredients.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      ingList.appendChild(li);
+    });
+
+    const instList = document.getElementById("instructions-list");
+    instList.innerHTML = "";
+    recipe.instructions.forEach(step => {
+      const li = document.createElement("li");
+      li.textContent = step;
+      instList.appendChild(li);
+    });
+  } else {
+    document.getElementById("recipe-title").textContent = "Recipe not found.";
+  }
+});
 });
