@@ -15,17 +15,18 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header & Navigation -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="nav-container">
       <div class="logo-area">
         <img src="images/jk-logo.png" alt="Joeverlyn's Logo" class="logo" />
         <span class="site-name">Joeverlyn's Kitchen</span>
       </div>
-         <nav class="main-nav" id="main-nav">
+         <nav class="main-nav" id="main-nav" role="navigation" aria-label="Primary Navigation">
                 <ul>
                   <li><a href="kitchen.html">Home</a></li>
                   <li><a href="recipe.html">Recipe</a></li>
                   <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact</a></li>
                 </ul>
               </nav>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
@@ -33,7 +34,7 @@
   </header>
 
   <!-- Main Content -->
-  <main id="main-content">
+  <main id="main-content" role="main">
     <section class="hero">
       <img src="images/blog.png" alt="A featured dish from Joeverlyn's Kitchen" />
      
@@ -85,7 +86,7 @@
   </main>
 
  <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-container">
     <!-- Left: Logo -->
         <div class="footer-logo">
