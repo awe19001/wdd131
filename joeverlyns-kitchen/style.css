@@ -86,7 +86,7 @@ body {
 .main-nav a {
   text-decoration: none;
   font-weight: bold;
-  color: #396E94;
+  color: #1a1a1a;
   align-items: center;
   justify-content: center;
   width: 100%; /* Ensure link fills the li */
