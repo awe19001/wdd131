@@ -34,19 +34,20 @@
   </header>
 
   <!-- Main Content -->
-  <main id="main-content">
-    <section class="hero">
-      <img src="images/welcome.png" alt="A featured dish from Joeverlyn's Kitchen" />
-     
-      <h1>Hello!</h1>
-      <p>Welcome to Joeverlyn's Kitchen - your go-to spot for simple, delicious and budget-friendly recipes. Whether you're a student, a first-time cook or just hungry and in a hurry, you're in the place.</p>
-      <p>Here, we cook delicious meals on a budget. Whether you’re a student, a busy parent, or just learning to cook — we’ve got easy and hearty recipes just for you!</p></p>
-      <p>"You don't need fancy ingredients to make good food -  just heart and a little heat." </p>
+   <main id="main-content">
+    <h1>Contact Us</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
 
-      
-      <a href="recipe.html" class="cta-button">See Recipes</a>
-    </section>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
 
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
   </main>
 
 
