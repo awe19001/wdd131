@@ -335,6 +335,13 @@ img#gemini_sidebar_cext_t {
   display: none !important;
 }
 
+/* Wider padding for search input on recipe page */
+.recipe-search input[type="search"] {
+  padding: 0.8rem 1.2rem; /* top-bottom | left-right */
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
 
 /* This is for the recipe.html page */
 /* Center lists only on the recipe page */
@@ -485,6 +492,13 @@ img#gemini_sidebar_cext_t {
 .recipe-card a:hover {
   background-color: #d35400;
 }
+
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 
 /* Regular mobile phones */
 @media (min-width: 481px) and (max-width: 767px) {
