@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joeverlyn's Kitchen</title>
+  <meta name="description" content="Easy, delicious, and budget-friendly recipes for everyone." />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+
+
+  <!-- Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="images/jk-logo.png" alt="Joeverlyn's Kitchen logo" class="logo" />
+        <span class="site-name">Joeverlyn's Kitchen</span>
+      </div>
+         <nav class="main-nav" id="main-nav" role="navigation" aria-label="Primary Navigation">
+                <ul>
+                  <li><a href="kitchen.html">Home</a></li>
+                  <li><a href="recipe.html">Recipe</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+   <main id="main-content" role="main">
+    <h1>Contact Us</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required aria-required="true" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true" />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+
+        <button type="submit" aria-label="Send your message">Send</button>
+    </form>
+  </main>
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+    <!-- Left: Logo -->
+        <div class="footer-logo">
+          <img src="images/jk-logo.png" alt="Joeverlyn's Kitchen logo" />
+        </div>
+
+    <!-- Center: Social Media Icons -->
+        <div class="footer-social">
+          <h3>FOLLOW ALONG</h3>
+            <div class="icons-container">
+              <a href="https://www.facebook.com/joeverlyn.awe" aria-label="Facebook"><img src="images/fb.svg" alt="Facebook" /></a>
+              <a href="https://ph.pinterest.com/business/hub/" aria-label="Pinterest"><img src="images/pt.svg" alt="Pinterest" /></a>
+              <a href="https://www.instagram.com/joeverlynawe/" aria-label="Instagram"><img src="images/ig.svg" alt="Instagram" /></a>
+              <a href="https://www.youtube.com/@joeverlynawe5771" aria-label="YouTube"><img src="images/yt.svg" alt="YouTube" /></a>
+              <a href="https://www.linkedin.com/in/joeverlyn-awe-a1a753313/" aria-label="LinkedIn"><img src="images/li.svg" alt="LinkedIn" /></a>
+              <a href="https://www.tiktok.com/@joeverlyn.awe?lang=en" aria-label="TikTok"><img src="images/tt.svg" alt="TikTok" /></a>
+            </div>
+              <p class="footer-copyright">
+                &copy; 2025 Joeverlyn's Kitchen. All rights reserved.
+              </p>
+        </div>
+        <!-- Right: Navigation Links -->
+        <div class="footer-links">
+          <h3>MORE FROM US</h3>
+          <ul>
+            <li><a href="kitchen.html">Homepage</a></li>
+            <li><a href="recipe.html">Recipes</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer>
+
+</body>
+</html>

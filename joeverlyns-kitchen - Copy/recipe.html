@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joeverlyn's Kitchen</title>
+  <meta name="description" content="Easy, delicious, and budget-friendly recipes for everyone." />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body class="recipe-page">
+
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+
+
+  <!-- Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="images/jk-logo.png" alt="Joeverlyn's Kitchen logo" class="logo" />
+        <span class="site-name">Joeverlyn's Kitchen</span>
+      </div>
+         <nav class="main-nav" id="main-nav" role="navigation" aria-label="Primary Navigation">
+                <ul>
+                  <li><a href="kitchen.html">Home</a></li>
+                  <li><a href="recipe.html">Recipe</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <section class="hero">
+       <!-- Search form section -->
+        <section class="recipe-search">
+          <form class="search-formholder" role="search">
+            <label for="search-input" class="sr-only">Search recipes</label>  
+            <input type="search" id="search-input" name="search" />
+          </form>
+
+         <div id="filtered-recipes" class="recipe-list"></div>
+        </section>
+
+    <div id="default-recipe">
+      <img src="images/recipe.png" alt="A featured dish from Joeverlyn's Kitchen" />
+     
+          <h1>🍚 Classic Fried Rice Recipe</h1>
+          <div class="section">
+            <h2>Ingredients (Serves 2–4):</h2>
+            <ul>
+              <li>2 cups cooked rice (preferably day-old and chilled)</li>
+              <li>2 tablespoons oil (vegetable, canola, or sesame)</li>
+              <li>2 eggs, lightly beaten</li>
+              <li>1/2 cup onion, finely chopped</li>
+              <li>2 garlic cloves, minced</li>
+              <li>1/2 cup frozen peas and carrots (thawed)</li>
+              <li>2–3 tablespoons soy sauce</li>
+              <li>1 teaspoon sesame oil (optional)</li>
+              <li>Salt and pepper, to taste</li>
+              <li>2 green onions, sliced (for garnish)</li>
+              <li>Optional: cooked chicken, shrimp, tofu, or ham</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Instructions:</h2>
+            <ol>
+              <li>Break up cold rice so it's easy to stir-fry.</li>
+              <li>Heat 1/2 tbsp oil in a pan and scramble eggs. Remove and set aside.</li>
+              <li>Sauté onions and garlic in remaining oil for 1–2 minutes.</li>
+              <li>Add peas and carrots; cook another 2–3 minutes.</li>
+              <li>Turn heat to high, add rice, and stir-fry for 2–3 minutes.</li>
+              <li>Stir in soy sauce, sesame oil, salt, and pepper.</li>
+              <li>Add scrambled eggs and optional protein. Mix well.</li>
+              <li>Top with green onions and serve hot.</li>
+            </ol>
+          </div>
+    </div>
+    </section>
+    
+  </main>
+
+ <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <!-- Left: Logo -->
+      <div class="footer-logo">
+          <img src="images/jk-logo.png" alt="Joeverlyn's Kitchen logo" />
+        </div>
+
+      <!-- Center: Social Media Icons -->
+      <div class="footer-social">
+          <h3>FOLLOW ALONG</h3>
+            <div class="icons-container">
+              <a href="https://www.facebook.com/joeverlyn.awe" aria-label="Facebook"><img src="images/fb.svg" alt="Facebook" /></a>
+              <a href="https://ph.pinterest.com/business/hub/" aria-label="Pinterest"><img src="images/pt.svg" alt="Pinterest" /></a>
+              <a href="https://www.instagram.com/joeverlynawe/" aria-label="Instagram"><img src="images/ig.svg" alt="Instagram" /></a>
+              <a href="https://www.youtube.com/@joeverlynawe5771" aria-label="YouTube"><img src="images/yt.svg" alt="YouTube" /></a>
+              <a href="https://www.linkedin.com/in/joeverlyn-awe-a1a753313/" aria-label="LinkedIn"><img src="images/li.svg" alt="LinkedIn" /></a>
+              <a href="https://www.tiktok.com/@joeverlyn.awe?lang=en" aria-label="TikTok"><img src="images/tt.svg" alt="TikTok" /></a>
+            </div>
+              <p class="footer-copyright">
+                &copy; 2025 Joeverlyn's Kitchen. All rights reserved.
+              </p>
+        </div>
+        <!-- Right: Navigation Links -->
+        <div class="footer-links">
+          <h3>MORE FROM US</h3>
+          <ul>
+            <li><a href="kitchen.html">Homepage</a></li>
+            <li><a href="recipe.html">Recipes</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer>
+
+</body>
+</html>

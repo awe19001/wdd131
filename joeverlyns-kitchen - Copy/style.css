@@ -1,0 +1,600 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 1;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+}
+.skip-link:focus, .skip-link:active {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+   padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* Header */
+.site-header {
+  background-color: #F9DC5C;
+  border-bottom: 2px solid #ffd1a4;
+  align-items: center;
+  height: 60px;  /* ✅ Fixed height */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.site-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #d35400;
+}
+
+/* Navigation */
+.main-nav {
+  height: 100%;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+
+}
+
+.main-nav li {
+   height: 100%;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1a1a1a;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Ensure link fills the li */
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  display: flex;
+  height: 60px;
+  padding: 0 40px; /* equal left/right padding */
+  background-color: orange;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.main-nav a:hover {
+  color: White;
+  background-color: #ED254E;
+}
+
+/* Hamburger Menu (Mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Optional: centers the image */
+  padding-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #452307;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #d35400;
+}
+
+/* Contact form container */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #F9DC5C; /* light background */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Roboto', sans-serif; /* your existing font */
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: black;
+}
+
+/* Inputs and textarea */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus states for accessibility */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #396E94; 
+  box-shadow: 0 0 3px #396E94;
+}
+
+/* Submit button */
+form button[type="submit"] {
+  background-color: #396E94;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover */
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+  background-color: #3b75c4;
+  outline: none;
+}
+
+
+/* Footer Styles */
+.site-footer {
+  background-color: #F9DC5C;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  /* Align children to top */
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-social,
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Align content to top */
+  text-align: center;
+}
+
+/* Left - Logo */
+.footer-logo img {
+  width: 60px;
+  height: auto;
+}
+
+/* Center - Social Media */
+.footer-social {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; /* optional: center icons horizontally */
+  gap: 10px; /* space between icons */
+  text-align: center;
+}
+
+.footer-social h4 {
+  margin-bottom: 10px;
+  color: #c0392b;
+}
+
+.footer-social a img {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover img {
+  transform: scale(1.2);
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: row; /* align icons horizontally */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons-container a img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.icons-container a:hover img {
+  transform: scale(1.2);
+}
+
+/* Right - Links */
+.footer-links h4 {
+  color: #c0392b;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-links a:hover {
+  color: #d35400;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+/* This is for the recipe.html page */
+/* Center lists only on the recipe page */
+/* Remove bullets and numbers on recipe page */
+.recipe-page .section ul,
+.recipe-page .section ol {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: center; /* Optional: center the text */
+}
+.recipe-page .section li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.recipe-card ul {
+  list-style-type: none;  /* Remove bullets */
+  padding-left: 0;        /* Remove left padding */
+  margin-left: 0;         /* Remove left margin */
+}
+
+.recipe-card ol {
+  list-style-type: none;  /* Remove numbers */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.recipe-card ol li::before {
+  content: "";            /* Remove any default markers */
+}
+
+#filtered-recipes h1 {
+  color: #ED254E;
+}
+
+#filtered-recipes h2 {
+  color: black;
+  font-weight: bold;
+}
+
+/* Default recipe image styling */
+#default-recipe img {
+  display: block;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Match dynamically generated recipe cards */
+#filtered-recipes .recipe-card img {
+  display: block;
+  max-width: 1000px;  /* Match the width of recipe.png */
+  width: 100%;
+}
+
+
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 5px;
+    background-color: transparent;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li {
+    background: none;  /* important to remove inherited bg */
+  }
+
+  .main-nav a {
+    background-color: orange; /* keeps the purple/whatever theme */
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+
+  .main-nav a:hover {
+    background-color: #ED254E;
+    color: white;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff3e6;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+/* Recipes */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.recipe-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.recipe-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.recipe-card h2 {
+  margin: 10px 0;
+  color: #d35400;
+}
+
+.recipe-card a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #e67e22;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.recipe-card a:hover {
+  background-color: #d35400;
+}
+
+/* Regular mobile phones */
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 5px;
+    background-color: transparent;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li {
+    background: none;  /* important to remove inherited bg */
+  }
+
+  .main-nav a {
+    background-color: orange; /* keeps the purple/whatever theme */
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+
+  .main-nav a:hover {
+    background-color: #ED254E;
+    color: white;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+    .footer-container {
+    flex-direction: column !important; /* Stack items vertically */
+    align-items: center !important;    /* Center items horizontally */
+    text-align: center;
+  }
+  
+  .footer-logo,
+  .footer-social,
+  .footer-links {
+    width: 100%;
+    margin-bottom: 20px; /* space between each section */
+  }
+
+  .footer-links h4 {
+    margin-top: 0; /* ensure no extra top space */
+  }
+}
+
+
+
+/* Very small phones */
+@media (max-width: 480px) {
+.main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 5px;
+    background-color: transparent;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li {
+    background: none;  /* important to remove inherited bg */
+  }
+
+  .main-nav a {
+    background-color: orange; /* keeps the purple/whatever theme */
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+
+  .main-nav a:hover {
+    background-color: #ED254E;
+    color: white;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  
+ .footer-container {
+    flex-direction: column !important; /* Stack items vertically */
+    align-items: center !important;    /* Center items horizontally */
+    text-align: center;
+  }
+  
+  .footer-logo,
+  .footer-social,
+  .footer-links {
+    width: 100%;
+    margin-bottom: 20px; /* space between each section */
+  }
+
+  .footer-links h4 {
+    margin-top: 0; /* ensure no extra top space */
+  }
+}
