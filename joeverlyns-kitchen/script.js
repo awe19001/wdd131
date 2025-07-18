@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.search-formholder');
   const input = form.querySelector('input[type="search"]');
   const resultsContainer = document.getElementById('filtered-recipes');
-const defaultSection = document.getElementById('default-recipe');
+  const defaultSection = document.getElementById('default-recipe');
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -49,8 +50,11 @@ const defaultSection = document.getElementById('default-recipe');
         .map((step, index) => `<li><strong>Step ${index + 1}:</strong> ${step}</li>`)
         .join('');
 
-        card.innerHTML = `
-        <img src="${recipe.image}" alt="${recipe.title}">
+      // Ensure alt attribute is never empty
+      const altText = recipe.title ? recipe.title : "Recipe image";
+
+      card.innerHTML = `
+        <img src="${recipe.image}" alt="${altText}">
         <h1>${recipe.title}</h1>
         <p>${recipe.description}</p>
         <h2>Ingredients:</h2>
@@ -60,12 +64,10 @@ const defaultSection = document.getElementById('default-recipe');
       `;
 
       resultsContainer.appendChild(card);
-
-      
     });
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // This second DOMContentLoaded inside the first looks redundant, so I'll merge it here
   const params = new URLSearchParams(window.location.search);
   const recipeName = params.get("recipe");
 
@@ -117,28 +119,29 @@ const defaultSection = document.getElementById('default-recipe');
     }
   };
 
-  const recipe = recipeData[recipeName];
+  if (recipeName) {
+    const recipe = recipeData[recipeName];
 
-  if (recipe) {
-    document.getElementById("recipe-title").textContent = recipe.title;
+    if (recipe) {
+      document.getElementById("recipe-title").textContent = recipe.title;
 
-    const ingList = document.getElementById("ingredients-list");
-    ingList.innerHTML = "";
-    recipe.ingredients.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      ingList.appendChild(li);
-    });
+      const ingList = document.getElementById("ingredients-list");
+      ingList.innerHTML = "";
+      recipe.ingredients.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ingList.appendChild(li);
+      });
 
-    const instList = document.getElementById("instructions-list");
-    instList.innerHTML = "";
-    recipe.instructions.forEach(step => {
-      const li = document.createElement("li");
-      li.textContent = step;
-      instList.appendChild(li);
-    });
-  } else {
-    document.getElementById("recipe-title").textContent = "Recipe not found.";
+      const instList = document.getElementById("instructions-list");
+      instList.innerHTML = "";
+      recipe.instructions.forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        instList.appendChild(li);
+      });
+    } else {
+      document.getElementById("recipe-title").textContent = "Recipe not found.";
+    }
   }
-});
 });

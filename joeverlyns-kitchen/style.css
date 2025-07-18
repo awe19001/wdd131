@@ -143,7 +143,7 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #e67e22;
+  background-color: #452307;
   color: white;
   font-weight: bold;
   text-decoration: none;
@@ -312,7 +312,7 @@ form button[type="submit"]:focus {
 
 .footer-links a {
   text-decoration: none;
-  color: #396E94;
+  color: black;
 }
 
 .footer-links a:hover {
