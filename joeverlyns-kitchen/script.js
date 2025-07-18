@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const altText = recipe.title ? recipe.title : "Recipe image";
 
       card.innerHTML = `
-        <img src="${recipe.image}" alt="${altText}">
+        <img src="${recipe.image}" alt="Photo of ${recipe.title}">
         <h1>${recipe.title}</h1>
         <p>${recipe.description}</p>
         <h2>Ingredients:</h2>
