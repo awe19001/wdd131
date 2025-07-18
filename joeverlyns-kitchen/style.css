@@ -331,6 +331,11 @@ form button[type="submit"]:focus {
 }
 
 
+img#gemini_sidebar_cext_t {
+  display: none !important;
+}
+
+
 /* This is for the recipe.html page */
 /* Center lists only on the recipe page */
 /* Remove bullets and numbers on recipe page */
