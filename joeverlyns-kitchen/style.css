@@ -219,6 +219,11 @@ form button[type="submit"]:focus {
   outline: none;
 }
 
+#healthy-hacks {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
 
 /* Footer Styles */
 .site-footer {
