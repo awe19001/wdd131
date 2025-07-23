@@ -44,8 +44,8 @@ body {
 
 /* Header */
 .site-header {
-  background-color: #F9DC5C;
-  border-bottom: 2px solid #ffd1a4;
+  background-color: #41c8c8;
+  border-bottom: 2px solid #fbfbf9;
   align-items: center;
   height: 60px;  /* ✅ Fixed height */
 }
@@ -73,7 +73,7 @@ body {
 .site-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #d35400;
+  color: #faf9f8;
 }
 
 /* Navigation */
@@ -107,14 +107,15 @@ body {
   display: flex;
   height: 60px;
   padding: 0 40px; /* equal left/right padding */
-  background-color: orange;
+  background-color: #41c8c8;
   transition: background-color 0.3s ease, color 0.3s ease;
+  border-bottom: 2px solid #fbfbf9;
 
 }
 
 .main-nav a:hover {
   color: White;
-  background-color: #ED254E;
+  background-color: #ed6825;
 }
 
 /* Hamburger Menu (Mobile) */
@@ -161,7 +162,7 @@ form {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background-color: #F9DC5C; /* light background */
+  background-color: #0f767f; /* light background */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   font-family: 'Roboto', sans-serif; /* your existing font */
@@ -227,7 +228,7 @@ form button[type="submit"]:focus {
 
 /* Footer Styles */
 .site-footer {
-  background-color: #F9DC5C;
+  background-color: #41c8c8;
   padding: 30px 20px;
   font-size: 0.9rem;
 }
@@ -345,7 +346,7 @@ img#gemini_sidebar_cext_t {
   padding: 0.8rem 1.2rem; /* top-bottom | left-right */
   font-size: 1rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #06aaf1;
 }
 
 /* This is for the recipe.html page */
@@ -380,7 +381,7 @@ img#gemini_sidebar_cext_t {
 }
 
 #filtered-recipes h1 {
-  color: #ED254E;
+  color: #07c4f8;
 }
 
 #filtered-recipes h2 {
@@ -454,7 +455,7 @@ img#gemini_sidebar_cext_t {
 
 .hero h1 {
   font-size: 2rem;
-  color: #c0392b;
+  color: #151515;
   margin-bottom: 10px;
 }
 
