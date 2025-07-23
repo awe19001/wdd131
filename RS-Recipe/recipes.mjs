@@ -46,7 +46,7 @@ export const recipes = [
   {
     title: '🍚 Classic Fried Rice Recipe',
     description: 'A quick and savory fried rice dish with vegetables and optional proteins.',
-    image: 'images/recipe.png',
+    image: 'images/recipes.png',
     ingredients: [
       '2 cups cooked rice (preferably day-old and chilled)',
       '2 tablespoons oil (vegetable, canola, or sesame)',
